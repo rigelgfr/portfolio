@@ -1,20 +1,13 @@
-import { useState } from "react"
-import { Button } from "./components/ui/button"
+import { LeftSidebar } from "./components/layout/Sidebar"
+import Main from "./components/layout/Main"
+import { RightEmpty } from "./components/layout/Empty"
 
-function App() {
-  const [count, setCount] = useState(0);
-
+export default function Page() {
   return (
-    <div className="flex flex-row justify-center items-center w-full h-screen bg-[#252525] gap-2">
-      <Button
-        variant={"outline"}
-        onClick={() => setCount((count) => count + 1)}>
-        Click me
-      </Button>
-
-      <h1>Count: {count}</h1>
+    <div className="flex h-screen">
+      <LeftSidebar/>
+      <Main />
+      <RightEmpty/>
     </div>
   )
 }
-
-export default App
