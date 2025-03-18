@@ -1,7 +1,6 @@
-// components/layout/Empty.tsx
 "use client"
 
-import { PokemonWatcher } from "@/components/sections/Pokemon";
+import PokemonWatcher from "../sections/Pokemon"
 
 export function RightEmpty() {
   return (
