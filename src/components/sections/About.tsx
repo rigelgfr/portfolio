@@ -1,6 +1,6 @@
 export function AboutSection() {
   return (
-    <section id="about" className="min-h-screen flex items-center">
+    <section id="about" className="flex items-center">
       <div>
         <h1 className="text-4xl font-bold mb-4 text-white">Hello, I'm John Portfolio</h1>
         <p className="text-xl text-gray-300 mb-6">

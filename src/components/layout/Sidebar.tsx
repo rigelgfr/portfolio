@@ -16,7 +16,7 @@ import {
 export function LeftSidebar() {
   return (
     <SidebarProvider>
-      <Sidebar collapsible="none" className="border-r bg-gray-900 text-white h-screen flex items-center justify-center">
+      <Sidebar collapsible="none" className="flex h-screen w-full items-center justify-center align-middle">
         <SidebarContent>
           <SidebarGroup>
             <SidebarGroupContent>

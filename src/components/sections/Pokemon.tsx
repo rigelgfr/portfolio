@@ -18,7 +18,7 @@ const PokemonWatcher = () => {
         <img 
           src={spriteUrl} 
           alt={`${pokemon.name} sprite`} 
-          className="w-24 h-24 object-contain"
+          className="lg:w-1/2 md:w-1/4 object-contain select-none"
         />
       ) : (
         <div className="w-24 h-24 bg-gray-200 flex items-center justify-center">
