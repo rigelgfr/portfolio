@@ -31,13 +31,13 @@ export function AboutSection() {
 
           {/* Socials */}
           <div className="flex justify-end items-center gap-2">
-            <a target="_blank" href="https://www.instagram.com/rigelgfr" ref={null}>
+            <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/rigelgfr" ref={null}>
               <FaInstagram className="w-8 h-8" />
             </a>
-            <a target="_blank" href="https://www.linkedin.com/in/rigel-gregory-feliciano-rahateen-b6a3b3312/" ref={null}>
+            <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/rigel-gregory-feliciano-rahateen-b6a3b3312/" ref={null}>
               <FaLinkedin className="w-8 h-8" />
             </a>
-            <a target="_blank" href="https://github.com/rigelgfr" ref={null}>
+            <a rel="noopener noreferrer" target="_blank" href="https://github.com/rigelgfr" ref={null}>
               <FaGithub className="w-8 h-8" />
             </a>
           </div>
