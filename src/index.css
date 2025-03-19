@@ -78,7 +78,8 @@
 }
 
 @theme {
-  --color-good-black: #252525
+  --color-black-25: #252525;
+  --color-grey-light: #999999;
 }
 
 @layer base {
