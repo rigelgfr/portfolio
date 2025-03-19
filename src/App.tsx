@@ -1,9 +1,11 @@
-import { RightEmpty } from "./components/layout/Empty";
+import { AboutSection } from "./components/sections/About";
 
 export default function Page() {
   return (
-    <div className="flex flex-col justify-center w-full">
-      <RightEmpty />
-    </div>
+    <main className="flex justify-center">
+      <div className="w-full md:w-1/3">
+        <AboutSection />
+      </div>
+    </main>
   )
 }

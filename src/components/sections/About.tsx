@@ -1,25 +1,70 @@
+import { FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram, FaFile } from "react-icons/fa";
+import profile from "../../assets/profile/me.webp";
+import { 
+  Avatar,
+  AvatarImage,
+  AvatarFallback
+ } from "../ui/avatar";
+import { Button } from "../ui/button";
+
 export function AboutSection() {
   return (
-    <section id="about" className="flex items-center">
-      <div>
-        <h1 className="text-4xl font-bold mb-4 text-white">Hello, I'm John Portfolio</h1>
-        <p className="text-xl text-gray-300 mb-6">
-          A passionate frontend developer creating beautiful and functional web experiences
-        </p>
-        <div className="flex gap-4">
-          <a
-            href="#projects"
-            className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90"
-          >
-            View My Work
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex h-10 items-center justify-center rounded-md border border-gray-700 bg-gray-800 px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-700"
-          >
-            Contact Me
-          </a>
+    <section id="about" className="mt-20 flex items-center p-6">
+      <div className="flex-col border rounded-lg p-6 space-y-3 w-full">
+        {/* row pertama */}
+        <div className="grid grid-cols-2">
+          {/* PP, Name, Location */}
+          <div className="flex gap-2">
+            <Avatar className="h-12 w-12 rounded-lg">
+              <AvatarImage src={profile} alt="My Picture"/>
+              <AvatarFallback>R</AvatarFallback>
+            </Avatar>
+            
+            <div className="flex-col items-center">
+              <h1 className="text-md font-semibold">Rigel Gregory F R</h1>
+              <div className="flex items-center gap-1">
+                <FaMapMarkerAlt className="w-3 h-3" />
+                <span className="text-sm text-grey-light">Bekasi, Indonesia</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Socials */}
+          <div className="flex justify-end items-center gap-2">
+            <a target="_blank" href="https://www.instagram.com/rigelgfr" ref={null}>
+              <FaInstagram className="w-8 h-8" />
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/rigel-gregory-feliciano-rahateen-b6a3b3312/" ref={null}>
+              <FaLinkedin className="w-8 h-8" />
+            </a>
+            <a target="_blank" href="https://github.com/rigelgfr" ref={null}>
+              <FaGithub className="w-8 h-8" />
+            </a>
+          </div>
         </div>
+        
+        {/* row kedua */}
+        <div className="grid grid-cols-2">
+          {/* CV download */}
+          <div className="flex self-center items-center gap-2">
+            <Button 
+              className="border-1 bg-transparent text-white hover:bg-accent"
+              variant="default"
+            >
+              <FaFile />
+              CV
+            </Button>
+            <p className="text-sm text-grey-light">.pdf</p>
+          </div>
+          
+          {/* Description */}
+          <div className="flex-col text-end items-center border-r-2 border-white pr-2">
+            <h1 className="text-md font-semibold">Junior Web Developer</h1>
+            <h1 className="text-sm text-grey-light"><span className="text-white">Frontend</span> Focused</h1>
+          </div>
+        </div>
+      
+
       </div>
     </section>
   )
