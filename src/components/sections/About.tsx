@@ -6,13 +6,13 @@ import {
   AvatarFallback
  } from "../ui/avatar";
 import { Button } from "../ui/button";
+import { SectionContainer } from "../ui/section-container";
 
 export function AboutSection() {
   return (
-    <section id="about" className="mt-20 flex items-center p-6">
-      <div className="flex-col border rounded-lg p-6 space-y-3 w-full">
-        {/* row pertama */}
-        <div className="grid grid-cols-2">
+    <SectionContainer id="about">
+       {/* row pertama */}
+       <div className="grid grid-cols-2">
           {/* PP, Name, Location */}
           <div className="flex gap-2">
             <Avatar className="h-12 w-12 rounded-lg">
@@ -63,9 +63,6 @@ export function AboutSection() {
             <h1 className="text-sm text-grey-light"><span className="text-white">Frontend</span> Focused</h1>
           </div>
         </div>
-      
-
-      </div>
-    </section>
+    </SectionContainer>
   )
 }
