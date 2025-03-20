@@ -30,7 +30,7 @@ export function AboutSection() {
           </div>
 
           {/* Socials */}
-          <div className="flex justify-end items-center gap-2">
+          <div className="flex justify-end items-center gap-3">
             <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/rigelgfr" ref={null}>
               <FaInstagram className="w-8 h-8" />
             </a>
