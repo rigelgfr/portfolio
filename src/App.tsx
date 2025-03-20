@@ -2,6 +2,7 @@ import { AboutSection } from "./components/sections/About";
 import pokeball_animated from "./assets/icon/pokeball_animated.png";
 import { Content } from "./components/sections/Content";
 import { SkillsSection } from "./components/sections/Skills";
+import { ExperienceSection } from "./components/sections/Experience";
 
 export default function Page() {
   return (
@@ -10,7 +11,7 @@ export default function Page() {
         <Content />
         <AboutSection />
         <SkillsSection />
-
+        <ExperienceSection />
 
         <div className="flex w-full justify-center">
           <img src={pokeball_animated} alt="Pokeball" className="object-contain select-none" />
