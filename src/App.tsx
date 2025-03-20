@@ -3,6 +3,7 @@ import pokeball_animated from "./assets/icon/pokeball_animated.png";
 import { Content } from "./components/sections/Content";
 import { SkillsSection } from "./components/sections/Skills";
 import { ExperienceSection } from "./components/sections/Experience";
+import { Toaster } from "./components/ui/sonner";
 
 export default function Page() {
   return (
@@ -18,6 +19,8 @@ export default function Page() {
         </div>
 
       </div>
+      <Toaster position="top-right" />
+
     </main>
   )
 }
