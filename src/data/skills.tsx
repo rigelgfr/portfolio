@@ -1,15 +1,8 @@
-import React from 'react';
 import { FaGitAlt, FaReact } from 'react-icons/fa';
 import { SiNextdotjs, SiPostgresql, SiTailwindcss, SiTypescript } from 'react-icons/si';
+import { SkillCardProps } from '@/components/ui/section-card';
 
-export type Skill = {
-  skill: string;
-  description: string;
-  icon: React.ReactElement;
-  color: string;
-};
-
-export const skills: Skill[] = [
+export const skills: SkillCardProps[] = [
   {
     skill: "React",
     description: "JavaScript library",
@@ -20,7 +13,7 @@ export const skills: Skill[] = [
     skill: "Next.js",
     description: "React framework",
     icon: <SiNextdotjs className="w-6 h-6" />,
-    color: "border-white/80 group-hover:text-white group-hover:bg-black-25"
+    color: "border-white/50 group-hover:text-white group-hover:bg-black-25"
   },
   {
     skill: "TypeScript",
