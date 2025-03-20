@@ -4,6 +4,7 @@ import { Content } from "./components/sections/Content";
 import { SkillsSection } from "./components/sections/Skills";
 import { ExperienceSection } from "./components/sections/Experience";
 import { Toaster } from "./components/ui/sonner";
+import { ProjectsSection } from "./components/sections/Projects";
 
 export default function Page() {
   return (
@@ -13,6 +14,7 @@ export default function Page() {
         <AboutSection />
         <SkillsSection />
         <ExperienceSection />
+        <ProjectsSection />
 
         <div className="flex w-full justify-center">
           <img src={pokeball_animated} alt="Pokeball" className="object-contain select-none" />
