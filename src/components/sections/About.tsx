@@ -9,7 +9,8 @@ import {
 import { Button } from "../ui/button";
 import { SectionContainerBordered } from "../ui/section-container";
 import { MdEmail, MdMarkEmailRead } from "react-icons/md";
-import { copyToClipboard } from "@/utils/copy-email";
+import { copyToClipboard } from "@/utils/copyEmail";
+import { downloadFile } from "@/utils/downloadCV";
 
 export function AboutSection() {
   const [copied, setCopied] = useState(false);
@@ -25,6 +26,15 @@ export function AboutSection() {
       setCopied(true);
       setTimeout(() => setCopied(false), 1000);
     }
+  };
+
+  const handleDownloadCV = () => {
+    downloadFile({
+      url: "/file/cv.pdf",
+      fileName: "Rigel_Gregory_CV.pdf",
+      successMessage: "CV downloaded successfully!",
+      errorMessage: "Failed to download CV. Please try again."
+    });
   };
 
   return (
@@ -75,6 +85,7 @@ export function AboutSection() {
             <Button 
               className="border-1 bg-transparent text-white hover:bg-accent/25"
               variant="default"
+              onClick={handleDownloadCV}
             >
               <FaFile />
               CV
