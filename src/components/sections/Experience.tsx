@@ -16,7 +16,7 @@ export function ExperienceSection() {
           description="my work experience and studies"
         />
 
-        <Tabs defaultValue="account">
+        <Tabs defaultValue="work">
           <TabsList className="w-full rounded-lg bg-transparent border">
             <TabsTrigger value="work">work</TabsTrigger>
             <TabsTrigger value="studies">studies</TabsTrigger>
