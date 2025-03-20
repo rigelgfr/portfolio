@@ -6,11 +6,11 @@ import {
   AvatarFallback
  } from "../ui/avatar";
 import { Button } from "../ui/button";
-import { SectionContainer } from "../ui/section-container";
+import { SectionContainerBordered } from "../ui/section-container";
 
 export function AboutSection() {
   return (
-    <SectionContainer id="about">
+    <SectionContainerBordered id="about">
        {/* row pertama */}
        <div className="grid grid-cols-2">
           {/* PP, Name, Location */}
@@ -48,7 +48,7 @@ export function AboutSection() {
           {/* CV download */}
           <div className="flex self-center items-center gap-2">
             <Button 
-              className="border-1 bg-transparent text-white hover:bg-accent"
+              className="border-1 bg-transparent text-white hover:bg-accent/25"
               variant="default"
             >
               <FaFile />
@@ -63,6 +63,6 @@ export function AboutSection() {
             <h1 className="text-sm text-grey-light"><span className="text-white">Frontend</span> Focused</h1>
           </div>
         </div>
-    </SectionContainer>
+    </SectionContainerBordered>
   )
 }
