@@ -2,13 +2,13 @@ export type SkillCardProps = {
   skill: string;
   description: string;
   icon: React.ReactElement;
-  color: string;
+  animation: string;
 };
 
-export function SkillCard({ skill, description, icon, color }: SkillCardProps) {
+export function SkillCard({ skill, description, icon, animation }: SkillCardProps) {
   return (
     <div className="group flex items-center space-x-2 border rounded-lg p-3 hover:bg-accent/25 transition duration-300">
-      <span className={`border p-2 rounded-lg ${color} group-hover:border-transparent transition duration-300`}>
+      <span className={`border p-2 rounded-lg ${animation} group-hover:border-transparent transition duration-300`}>
         {icon}
       </span>
       <div className="flex-col">
@@ -68,3 +68,39 @@ export function ExperienceCardRow({ image, institute, link, period, work, descri
   );
 }
 
+export type ProjectCardProps = {
+  app_name: string;
+  formality: string;
+  team: boolean; 
+  description: string;
+  job: string;
+  image: string[];
+  source_code: string;
+  stack: React.ReactNode[];
+};
+
+export function ProjectCard({ app_name, formality, team, description, image, source_code, stack }: ProjectCardProps) {
+  return(
+    <div className="border rounded-lg p-4">
+      <div className="flex items-center space-x-2">
+        <h1 className="text-lg font-bold">{app_name}</h1>
+        <span className="text-xs text-grey-light">{formality}</span>
+      </div>
+      <div className="flex items-center space-x-2">
+        <span className="text-xs text-grey-light">{team ? "team" : "solo"}</span>
+      </div>
+      <p className="text-sm">{description}</p>
+      <div className="flex items-center space-x-2">
+        {image.map((image, index) => (
+          <img src={image} alt={app_name} className="object-contain h-20 w-20" key={index} />
+        ))}
+      </div>
+      <div className="flex items-center space-x-2">
+        {stack.map((stack, index) => (
+          <span key={index}>{stack}</span>
+        ))}
+      </div>
+      <a href={source_code} target="_blank" rel="noopener noreferrer" className="text-xs text-accent hover:underline">source code</a>
+    </div>
+  );
+}

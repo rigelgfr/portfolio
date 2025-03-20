@@ -25,7 +25,7 @@ export function SkillsSection() {
               skill={skill.skill}
               description={skill.description}
               icon={skill.icon}
-              color={skill.color}
+              animation={skill.animation}
             />
           ))}
         </div>
