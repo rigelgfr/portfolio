@@ -6,6 +6,9 @@ interface CopyToClipboardOptions {
   errorMessage?: string;
 }
 
+/**
+ * A utility function that copies the email to the clipboard and shows Sonner toast notifications
+ */
 export const copyToClipboard = async ({
   text,
   successMessage = "Copied email to clipboard",
