@@ -31,7 +31,7 @@ export const skills: SkillCardProps[] = [
     skill: "PostgreSQL",
     description: "Database",
     icon: <SiPostgresql className="w-6 h-6" />,
-    color: "border-[#396c94]/80 group-hover:text-[#396c94] group-hover:bg-white"
+    color: "border-[#396c94]/80 group-hover:bg-[#396c94]"
   },
   {
     skill: "Git",
