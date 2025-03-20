@@ -8,8 +8,8 @@ export const work: ExperienceCardRowProps[] = [
         period: "Oct 2024 - Present",
         work: "Intern Fullstack Web Developer",
         points: [
-            "Developed a local web application to help visualize warehouse data for report and presentation purposes.",
-            "Compiled data of IT equipments throughout the office into a spreadsheet.",
+            "Developed a local web application to help visualize warehouse data for report and presentation purposes",
+            "Compiled data of IT equipments throughout the office into a spreadsheet",
         ]
     },
 ]
