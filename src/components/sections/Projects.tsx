@@ -12,7 +12,7 @@ export function ProjectsSection() {
           <SectionHeader
             icon={<FaCode className="w-4 h-4"/>}
             title="projects"
-            description="some client and personal projects i made"
+            description="some projects i made/contributed in"
           />
 
           <Separator />
