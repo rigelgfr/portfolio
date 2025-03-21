@@ -9,7 +9,6 @@ const PokemonWatcher = () => {
   
   if (!pokemon) return null;
   
-  // Get the animated sprite URL
   const spriteUrl = pokemon.sprites.versions['generation-v']['black-white'].animated.front_default;
   
   return (
