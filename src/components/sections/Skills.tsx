@@ -1,6 +1,5 @@
 import { SectionContainerBorderless } from "../ui/section-container"
 import { FaWrench } from "react-icons/fa"
-import { Separator } from "../ui/separator"
 import { skills } from "@/data/skills"
 import { SkillCard } from "../ui/section-card"
 import { SectionHeader } from "../ui/section-header"
@@ -14,10 +13,9 @@ export function SkillsSection() {
           icon={<FaWrench className="w-4 h-4"/>}
           title="skills & technologies"
           description="what i use, still learning and improving"
+          separator
         />
-
-        <Separator />
-
+        
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-2 gap-y-3">
           {skills.map((skill, index) => (
             <SkillCard
