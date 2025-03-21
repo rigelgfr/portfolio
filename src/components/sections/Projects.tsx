@@ -15,7 +15,7 @@ export function ProjectsSection() {
             separator
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-2 gap-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {projects.map((projects, index) => (
               <ProjectCard
                 key={index}
