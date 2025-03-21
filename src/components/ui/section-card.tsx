@@ -1,3 +1,6 @@
+import { Separator } from "./separator";
+import { Badge } from "./badge";
+
 export type SkillCardProps = {
   skill: string;
   description: string;
@@ -71,36 +74,57 @@ export function ExperienceCardRow({ image, institute, link, period, work, descri
 export type ProjectCardProps = {
   app_name: string;
   formality: string;
-  team: boolean; 
   description: string;
   job: string;
   image: string[];
   source_code: string;
-  stack: React.ReactNode[];
+  stack: StackBadgeProps[];
 };
 
-export function ProjectCard({ app_name, formality, team, description, image, source_code, stack }: ProjectCardProps) {
+export function ProjectCard({ app_name, formality, description, image, source_code, stack }: ProjectCardProps) {
   return(
-    <div className="border rounded-lg p-4">
-      <div className="flex items-center space-x-2">
-        <h1 className="text-lg font-bold">{app_name}</h1>
-        <span className="text-xs text-grey-light">{formality}</span>
+    <div className="border rounded-lg p-4 space-y-3">
+      <div className="flex flex-col flex-1 max-sm:space-y-3">
+        {image.length > 0 && (
+          <img src={image[0]} alt={app_name} className="object-contain rounded-lg" />
+        )}
+
+        <div className="flex sm:hidden flex-1 items-center">
+          <div className="flex flex-wrap gap-2 flex-grow">
+            {stack.map((stack, index) => (
+              <StackBadge key={index} icon={stack.icon} stack={stack.stack} frontend={stack.frontend} />
+            ))}
+          </div>
+        </div>
       </div>
-      <div className="flex items-center space-x-2">
-        <span className="text-xs text-grey-light">{team ? "team" : "solo"}</span>
+      
+      <div className="flex-col space-y-1">
+        <div className="flex items-center space-x-2">
+          <h1 className="text-md font-semibold">{app_name}</h1>
+          <span className="text-sm text-grey-light w-full text-end self-end">{formality}</span>
+        </div>
+
+        <Separator />
+
+        <p className="text-sm text-grey-light">{description}</p>
+      
+        <a href={source_code} target="_blank" rel="noopener noreferrer" className="text-xs text-accent hover:underline">source code</a>
+      
       </div>
-      <p className="text-sm">{description}</p>
-      <div className="flex items-center space-x-2">
-        {image.map((image, index) => (
-          <img src={image} alt={app_name} className="object-contain h-20 w-20" key={index} />
-        ))}
-      </div>
-      <div className="flex items-center space-x-2">
-        {stack.map((stack, index) => (
-          <span key={index}>{stack}</span>
-        ))}
-      </div>
-      <a href={source_code} target="_blank" rel="noopener noreferrer" className="text-xs text-accent hover:underline">source code</a>
     </div>
+  );
+}
+
+export type StackBadgeProps = {
+  icon: React.ReactNode;
+  stack: string;
+  frontend: boolean;
+}
+
+export function StackBadge({ icon, stack, frontend }: StackBadgeProps) {
+  return (
+    <Badge variant={frontend ? "secondary" : "default"}>
+      {icon}{stack}
+    </Badge>
   );
 }
