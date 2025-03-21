@@ -9,7 +9,7 @@ import { ProjectsSection } from "./components/sections/Projects";
 export default function Page() {
   return (
     <main className="flex justify-center">
-      <div className="w-full sm:w-2/3 xl:w-1/3">
+      <div className="w-full sm:w-3/4 xl:w-[800px]">
         <Content />
         <AboutSection />
         <SkillsSection />
