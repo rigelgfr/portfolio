@@ -56,7 +56,7 @@ const WaveLoadingDots: React.FC = () => {
   return (
     <span className="flex justify-center mt-10 text-lg font-semibold">
       <h1 className="flex items-center">
-        more coming soon
+        more in the works
         <span className="inline-flex ml-1 space-x-0.5">
           {dotStates.map((state, index) => (
             <span 
