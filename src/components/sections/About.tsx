@@ -1,42 +1,16 @@
-import { useState } from "react";
-import { FaMapMarkerAlt, FaGithub, FaLinkedin, FaInstagram, FaFile } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import profile from "../../assets/profile/me.webp";
 import { 
   Avatar,
   AvatarImage,
   AvatarFallback
  } from "../ui/avatar";
-import { Button } from "../ui/button";
 import { SectionContainerBordered } from "../ui/section-container";
-import { MdEmail, MdMarkEmailRead } from "react-icons/md";
-import { copyToClipboard } from "@/utils/copyEmail";
-import { downloadFile } from "@/utils/downloadCV";
+import { CVButton, EmailButton } from "../ui/custom-button";
+import { socials } from "@/data/socials";
+import { Socials } from "../ui/socials";
 
 export function AboutSection() {
-  const [copied, setCopied] = useState(false);
-  const email = "rigelrahateen@gmail.com";
-
-  const handleCopyEmail = async () => {
-    const success = await copyToClipboard({
-      text: email,
-      successMessage: "Email copied!"
-    });
-    
-    if (success) {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1000);
-    }
-  };
-
-  const handleDownloadCV = () => {
-    downloadFile({
-      url: "/file/cv.pdf",
-      fileName: "Rigel_Gregory_CV.pdf",
-      successMessage: "CV downloaded successfully!",
-      errorMessage: "Failed to download CV. Please try again."
-    });
-  };
-
   return (
     <SectionContainerBordered id="about">
        {/* row pertama */}
@@ -58,40 +32,18 @@ export function AboutSection() {
           </div>
 
           {/* Socials */}
-          <div className="flex justify-end items-center gap-3">
-            <span onClick={handleCopyEmail} className="transition cursor-pointer hover:scale-110 duration-200">
-              {copied ? (
-                <MdMarkEmailRead className="w-6 h-6 transition" />
-              ) : (
-                <MdEmail className="w-6 h-6 transition" />
-              )}
-            </span>
-            <a rel="noopener noreferrer" target="_blank" href="https://www.instagram.com/rigelgfr" ref={null} className="hover:scale-110 transition duration-200">
-              <FaInstagram className="w-6 h-6" />
-            </a>
-            <a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/rigel-gregory-feliciano-rahateen-b6a3b3312/" ref={null} className="hover:scale-110 transition duration-200">
-              <FaLinkedin className="w-6 h-6" />
-            </a>
-            <a rel="noopener noreferrer" target="_blank" href="https://github.com/rigelgfr" ref={null} className="hover:scale-110 transition duration-200">
-              <FaGithub className="w-6 h-6" />
-            </a>
+          <div className="flex group justify-end items-center gap-3">
+            <EmailButton />
+            {socials.map((social, index) => (
+              <Socials key={index} icon={social.icon} link={social.link}/>
+            ))}
           </div>
         </div>
         
         {/* row kedua */}
         <div className="grid grid-cols-2">
           {/* CV download */}
-          <div className="flex self-center items-center gap-2">
-            <Button 
-              className="border-1 bg-transparent text-white hover:bg-accent/25"
-              variant="default"
-              onClick={handleDownloadCV}
-            >
-              <FaFile />
-              CV
-            </Button>
-            <p className="text-sm text-grey-light">.pdf</p>
-          </div>
+          <CVButton />
           
           {/* Description */}
           <div className="flex-col text-end items-center border-r-2 border-white pr-2">
