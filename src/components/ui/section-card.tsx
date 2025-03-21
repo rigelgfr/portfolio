@@ -59,7 +59,7 @@ export function ExperienceCardRow({ image, institute, link, period, work, descri
       </a>
         
       <div className="flex flex-1 flex-col justify-start mr-4">
-        <h1 className="text-md font-bold">{institute}</h1>
+        <h1 className="text-md font-semibold">{institute}</h1>
         <p className="text-xs mb-1">{period}</p>
         <h1 className="text-sm text-grey-light">{work}</h1>
         {description && <p className="text-sm">{description}</p>}
