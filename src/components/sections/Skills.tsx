@@ -1,5 +1,5 @@
 import { SectionContainerBorderless } from "../ui/section-container"
-import { FaWrench } from "react-icons/fa"
+import { FaGear } from "react-icons/fa6";
 import { skills } from "@/data/skills"
 import { SkillCard } from "../ui/section-card"
 import { SectionHeader } from "../ui/section-header"
@@ -10,7 +10,7 @@ export function SkillsSection() {
       <div className="flex-col space-y-3">
         
         <SectionHeader
-          icon={<FaWrench className="w-4 h-4"/>}
+          icon={<FaGear className="w-4 h-4"/>}
           title="technologies"
           description="what i use, still learning and improving"
           separator

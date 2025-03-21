@@ -60,8 +60,8 @@ export function ExperienceCardRow({ image, institute, link, period, work, descri
         
       <div className="flex flex-1 flex-col justify-start mr-4">
         <h1 className="text-md font-bold">{institute}</h1>
-        <p className="text-xs text-grey-light mb-1">{period}</p>
-        <h1 className="text-sm">{work}</h1>
+        <p className="text-xs mb-1">{period}</p>
+        <h1 className="text-sm text-grey-light">{work}</h1>
         {description && <p className="text-sm">{description}</p>}
         <ul className="ml-4 list-outside list-disc marker:text-grey-light">
           {points && points.map((point, index) => <li className="text-sm" key={index}>{point}</li>)}
@@ -127,7 +127,7 @@ export type StackBadgeProps = {
 
 export function StackBadge({ icon, stack, frontend }: StackBadgeProps) {
   return (
-    <Badge variant={frontend ? "secondary" : "default"} className="select-none hover:scale-105 duration-200 transition">
+    <Badge variant={frontend ? "secondary" : "default"} className="select-none hover:scale-105 transition">
       {icon}{stack}
     </Badge>
   );
