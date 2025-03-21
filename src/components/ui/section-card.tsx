@@ -64,7 +64,7 @@ export function ExperienceCardRow({ image, institute, link, period, work, descri
         <h1 className="text-sm">{work}</h1>
         {description && <p className="text-sm">{description}</p>}
         <ul className="ml-4 list-outside list-disc marker:text-grey-light">
-          {points && points.map((point) => <li className="text-sm">{point}</li>)}
+          {points && points.map((point, index) => <li className="text-sm" key={index}>{point}</li>)}
         </ul>
       </div>     
     </li>

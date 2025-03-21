@@ -12,7 +12,7 @@ export function ExperienceSection() {
       <div className="flex-col space-y-4">
         <SectionHeader
           icon={<FaSuitcase className="w-4 h-4"/>}
-          title="experience"
+          title="experiences"
           description="my work experience and studies"
         />
 

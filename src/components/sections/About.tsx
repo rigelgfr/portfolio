@@ -23,7 +23,7 @@ export function AboutSection() {
             </Avatar>
             
             <div className="flex-col items-center">
-              <h1 className="text-md font-semibold">Rigel Gregory F R</h1>
+              <h1 className="text-lg font-semibold">Rigel Gregory F R</h1>
               <div className="flex items-center gap-1">
                 <FaMapMarkerAlt className="w-3 h-3" />
                 <span className="text-sm text-grey-light">Bekasi, Indonesia</span>

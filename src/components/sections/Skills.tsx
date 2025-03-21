@@ -6,12 +6,12 @@ import { SectionHeader } from "../ui/section-header"
 
 export function SkillsSection() {
   return (
-    <SectionContainerBorderless id="skills">
+    <SectionContainerBorderless id="technologies">
       <div className="flex-col space-y-3">
         
         <SectionHeader
           icon={<FaWrench className="w-4 h-4"/>}
-          title="skills & technologies"
+          title="technologies"
           description="what i use, still learning and improving"
           separator
         />
