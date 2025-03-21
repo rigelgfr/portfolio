@@ -3,6 +3,7 @@ import { SectionContainerBorderless } from "../ui/section-container";
 import { SectionHeader } from "../ui/section-header";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "../ui/section-card";
+import WaveLoadingDots from "../ui/wave-dots";
 
 export function ProjectsSection() {
     return (
@@ -29,6 +30,8 @@ export function ProjectsSection() {
               />
             ))}
           </div>
+
+          <WaveLoadingDots />
 
         </div> 
       </SectionContainerBorderless>
