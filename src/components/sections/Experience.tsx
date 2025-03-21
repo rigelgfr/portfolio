@@ -18,8 +18,8 @@ export function ExperienceSection() {
 
         <Tabs defaultValue="work">
           <TabsList className="w-full rounded-lg bg-transparent border">
-            <TabsTrigger value="work">work</TabsTrigger>
-            <TabsTrigger value="studies">studies</TabsTrigger>
+            <TabsTrigger value="work" className="hover:bg-accent/25 transition ease-in duration-200">work</TabsTrigger>
+            <TabsTrigger value="studies" className="hover:bg-accent/25 transition ease-in duration-200">studies</TabsTrigger>
           </TabsList>
           <TabsContent value="work">
             <ExperienceCard>
