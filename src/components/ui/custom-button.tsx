@@ -4,7 +4,7 @@ import { MdEmail, MdMarkEmailRead } from "react-icons/md";
 
 import { Button } from "./button";
 import { downloadFile } from "@/utils/downloadCV";
-import { FaFile } from "react-icons/fa";
+import { FaFile, FaGithub } from "react-icons/fa";
 
 export function EmailButton() {
     const [copied, setCopied] = useState(false)
@@ -54,5 +54,19 @@ export function CVButton() {
       </Button>
       <p className="text-sm text-grey-light">.pdf</p>
     </div>
+  )
+}
+
+export function SourceCodeButton({ source }: { source: string }) {
+  return (
+    <Button
+      size="sm"
+      variant="link"
+    >
+      <a href={source} className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+        <FaGithub />
+        <p>source code</p>
+      </a>
+    </Button>
   )
 }

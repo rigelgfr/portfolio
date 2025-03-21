@@ -1,5 +1,6 @@
 import { Separator } from "./separator";
 import { Badge } from "./badge";
+import { SourceCodeButton } from "./custom-button";
 
 export type SkillCardProps = {
   skill: string;
@@ -83,33 +84,36 @@ export type ProjectCardProps = {
 
 export function ProjectCard({ app_name, formality, description, image, source_code, stack }: ProjectCardProps) {
   return(
-    <div className="border rounded-lg p-4 space-y-3">
-      <div className="flex flex-col flex-1 max-sm:space-y-3">
+    <div className="border rounded-lg p-4 flex flex-col h-full hover:bg-accent/25 transition duration-300">
+      <div className="space-y-3 flex-grow">
         {image.length > 0 && (
           <img src={image[0]} alt={app_name} className="object-contain rounded-lg" />
         )}
 
-        <div className="flex sm:hidden flex-1 items-center">
+        <div className="flex items-center">
           <div className="flex flex-wrap gap-2 flex-grow">
             {stack.map((stack, index) => (
               <StackBadge key={index} icon={stack.icon} stack={stack.stack} frontend={stack.frontend} />
             ))}
           </div>
         </div>
+        
+        <div className="space-y-1">
+          <div className="flex items-center space-x-2">
+            <h1 className="text-md font-semibold w-full">{app_name}</h1>
+            <span className="text-sm text-grey-light w-full text-end self-end">{formality}</span>
+          </div>
+
+          <Separator />
+
+          <p className="text-sm text-grey-light">{description}</p>
+        </div>
       </div>
       
-      <div className="flex-col space-y-1">
-        <div className="flex items-center space-x-2">
-          <h1 className="text-md font-semibold">{app_name}</h1>
-          <span className="text-sm text-grey-light w-full text-end self-end">{formality}</span>
+      <div className="mt-auto pt-3">
+        <div className="flex justify-end">
+          <SourceCodeButton source={source_code} />
         </div>
-
-        <Separator />
-
-        <p className="text-sm text-grey-light">{description}</p>
-      
-        <a href={source_code} target="_blank" rel="noopener noreferrer" className="text-xs text-accent hover:underline">source code</a>
-      
       </div>
     </div>
   );
@@ -123,7 +127,7 @@ export type StackBadgeProps = {
 
 export function StackBadge({ icon, stack, frontend }: StackBadgeProps) {
   return (
-    <Badge variant={frontend ? "secondary" : "default"}>
+    <Badge variant={frontend ? "secondary" : "default"} className="select-none hover:scale-105 duration-200 transition">
       {icon}{stack}
     </Badge>
   );
