@@ -6,7 +6,7 @@ export const work: ExperienceCardRowProps[] = [
         institute: "PT. Bimaruna Jaya",
         link: "https://korindo-brj.com/",
         period: "Oct 2024 - Present",
-        work: "Intern Fullstack Web Developer",
+        work: "Fullstack Web Developer Intern",
         points: [
             "Developed a local web application to help visualize warehouse data for report and presentation purposes",
             "Compiled data of IT equipments throughout the office into a spreadsheet",
