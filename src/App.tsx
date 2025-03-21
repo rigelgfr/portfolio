@@ -5,6 +5,7 @@ import { ExperienceSection } from "./components/sections/Experience";
 import { Toaster } from "./components/ui/sonner";
 import { ProjectsSection } from "./components/sections/Projects";
 import Starfield from 'react-starfield';
+import { Footer } from "./components/sections/Footer";
 
 export default function Page() {
   return (
@@ -22,7 +23,7 @@ export default function Page() {
         <SkillsSection />
         <ExperienceSection />
         <ProjectsSection />
-
+        <Footer />
   
 
       </div>
