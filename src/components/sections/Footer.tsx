@@ -6,11 +6,11 @@ import { Socials } from "../ui/socials";
 
 export function Footer() {
     return (
-        <SectionContainerBorderless id="footer">
+        <SectionContainerBorderless id="footer" className="mt-16">
             <Separator />
 
             <div className="flex flex-col mt-10 space-y-10">
-                <div className="text-center text-sm">
+                <div className="text-center text-sm font-mono">
                     made with ❤️ by rigel
                 </div>
 

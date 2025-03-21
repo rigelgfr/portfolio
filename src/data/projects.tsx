@@ -1,6 +1,6 @@
 import { ProjectCardProps } from "@/components/ui/section-card";
 import { FaNodeJs, FaReact } from "react-icons/fa";
-import { SiAxios, SiExpress, SiGenius, SiGooglegemini, SiNextdotjs, SiPostgresql, SiPrisma, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { SiAxios, SiExpress, SiGenius, SiGooglegemini, SiNextdotjs, SiPostgresql, SiPrisma, SiShadcnui, SiTailwindcss, SiTypescript } from "react-icons/si";
 
 export const STACKS = {
     // Frontend stacks
@@ -8,6 +8,7 @@ export const STACKS = {
     NEXTJS: { icon: <SiNextdotjs />, stack: "Next.js", frontend: true },
     TYPESCRIPT: { icon: <SiTypescript />, stack: "TypeScript", frontend: true },
     TAILWIND: { icon: <SiTailwindcss />, stack: "Tailwind", frontend: true },
+    SHADCN: { icon: <SiShadcnui />, stack: "shadcn/ui", frontend: true },
   
     // Backend stacks
     NODE: { icon: <FaNodeJs />, stack: "Node.js", frontend: false },
@@ -56,6 +57,7 @@ export const projects: ProjectCardProps[] = [
             STACKS.NEXTJS,
             STACKS.TYPESCRIPT,
             STACKS.TAILWIND,
+            STACKS.SHADCN,
             STACKS.POSTGRESQL,
             STACKS.PRISMA
         ]
