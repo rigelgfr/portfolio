@@ -91,6 +91,7 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({ images, app_name })
                         loadedImages[index] ? 'opacity-100' : 'opacity-0'
                       }`}
                       draggable="false"
+                      loading='lazy'
                     />
                     
                     {/* Error state */}

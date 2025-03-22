@@ -4,20 +4,13 @@ import { SkillsSection } from "./components/sections/Skills";
 import { ExperienceSection } from "./components/sections/Experience";
 import { Toaster } from "./components/ui/sonner";
 import { ProjectsSection } from "./components/sections/Projects";
-import Starfield from 'react-starfield';
 import { Footer } from "./components/sections/Footer";
 
 export default function Page() {
   return (
     <main className="flex justify-center">
-      <Starfield
-        starCount={500}
-        starColor={[255, 255, 255]}
-        speedFactor={0.03}
-        backgroundColor="black"
-      />
 
-      <div className="w-full sm:w-3/4 xl:w-[800px]">
+      <div className="w-full sm:w-[600px] xl:w-[800px]">
         <Content />
         <AboutSection />
         <SkillsSection />

@@ -30,9 +30,9 @@ export const projects: ProjectCardProps[] = [
             "integrated the Genius API for lyrics fetching and Gemini API for romanization",
         ],
         image: [
-            "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/1.png?raw=true",
-            "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/2.png?raw=true",
-            "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/3.png?raw=true",
+            "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/1.webp?raw=true",
+            "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/2.webp?raw=true",
+            "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/3.webp?raw=true",
         ],
         source_code: "https://github.com/rigelgfr/utacy-lyrics",
         stack: [
@@ -54,9 +54,9 @@ export const projects: ProjectCardProps[] = [
             "built the database schema and queries using Prisma and PostgreSQL",
         ],
         image: [
-            "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/1.png?raw=true",
-            "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/2.png?raw=true",
-            "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/3.png?raw=true",
+            "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/1.webp?raw=true",
+            "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/2.webp?raw=true",
+            "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/3.webp?raw=true",
         ],
         source_code: "https://github.com/rigelgfr/brj-wrm",
         stack: [
