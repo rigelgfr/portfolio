@@ -6,7 +6,7 @@ import ProjectsCarousel from "./projects-carousel";
 
 export function ProjectsDialog({ app_name, description, formality, image, stack, job, source_code }: ProjectCardProps) {
     return (
-        <DialogContent className="sm:max-w-md md:max-w-lvh">
+        <DialogContent className="sm:max-w-2xl md:max-w-3xl">
             <DialogHeader>
                 <DialogTitle className="text-md">{app_name}</DialogTitle>
             </DialogHeader>

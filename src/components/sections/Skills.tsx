@@ -16,7 +16,7 @@ export function SkillsSection() {
           separator
         />
         
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-2 gap-y-3">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-2 gap-y-3">
           {skills.map((skill, index) => (
             <SkillCard
               key={index}
