@@ -25,11 +25,14 @@ export const projects: ProjectCardProps[] = [
         app_name: "UtacyLyrics",
         formality: "assignment, solo",
         description: "a lyrics web app that allows romanization of Japanese lyrics (characters) and more by leveraging Gemini API.",
-        job: "Frontend Developer",
+        job: [
+            "fullstack, created the app's frontend and styling",
+            "integrated the Genius API for lyrics fetching and Gemini API for romanization",
+        ],
         image: [
-            "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/3.png?raw=true",
-            "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/2.png?raw=true",
             "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/1.png?raw=true",
+            "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/2.png?raw=true",
+            "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/3.png?raw=true",
         ],
         source_code: "https://github.com/rigelgfr/utacy-lyrics",
         stack: [
@@ -46,11 +49,14 @@ export const projects: ProjectCardProps[] = [
         app_name: "BRJ-WRM",
         formality: "client, solo",
         description: "warehouse report management (WRM) is an internal web app that displays the company's inbound and outbound data as charts and tables.",
-        job: "Fullstack Developer",
+        job: [
+            "fullstack, created the app's frontend, including components and styling", 
+            "built the database schema and queries using Prisma and PostgreSQL",
+        ],
         image: [
-            "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/3.png?raw=true",
-            "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/2.png?raw=true",
             "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/1.png?raw=true",
+            "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/2.png?raw=true",
+            "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/3.png?raw=true",
         ],
         source_code: "https://github.com/rigelgfr/brj-wrm",
         stack: [

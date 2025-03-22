@@ -1,6 +1,13 @@
+import { useState } from "react";
 import { Separator } from "./separator";
+import {
+  Dialog,
+  DialogTrigger,
+} from "./dialog";
 import { Badge } from "./badge";
 import { SourceCodeButton } from "./custom-button";
+import { Pokeball } from "./pokeball";
+import { ProjectsDialog } from "./projects-dialog";
 
 export type SkillCardProps = {
   skill: string;
@@ -76,21 +83,59 @@ export type ProjectCardProps = {
   app_name: string;
   formality: string;
   description: string;
-  job: string;
+  job: string[];
   image: string[];
   source_code: string;
   stack: StackBadgeProps[];
 };
 
-export function ProjectCard({ app_name, formality, description, image, source_code, stack }: ProjectCardProps) {
+export function ProjectCard({ app_name, formality, description, image, source_code, stack, job }: ProjectCardProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+  
   return(
     <div className="border rounded-lg p-4 flex flex-col h-full hover:bg-accent/25 transition duration-300">
       <div className="space-y-3 flex-grow">
         {image.length > 0 && (
-          <img src={image[0]} alt={app_name} className="object-contain rounded-lg" />
+          <div className="relative group cursor-pointer">
+            <Dialog open={isOpen} onOpenChange={setIsOpen}>
+              <DialogTrigger asChild>
+                <div className="relative overflow-hidden rounded-lg">
+                  {!imageLoaded && (
+                    <div className="flex items-center justify-center">
+                      <Pokeball />
+                    </div>
+                  )}
+
+                  <img 
+                    src={image[image.length - 1]} 
+                    alt={app_name} 
+                    className={`w-full h-full object-contain transition duration-300 group-hover:opacity-70 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    onLoad={handleImageLoad}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <span className="text-sm font-semibold">see details</span>
+                  </div>
+                </div>
+              </DialogTrigger>
+              <ProjectsDialog
+                app_name={app_name}
+                description={description}
+                formality={formality}
+                image={image}
+                stack={stack}
+                job={job}
+                source_code={source_code}
+              />
+            </Dialog>
+          </div>
         )}
 
-        <div className="flex items-center">
+        <div className="flex min-md:hidden items-center">
           <div className="flex flex-wrap gap-2 flex-grow">
             {stack.map((stack, index) => (
               <StackBadge key={index} icon={stack.icon} stack={stack.stack} frontend={stack.frontend} />
