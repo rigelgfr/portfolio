@@ -18,7 +18,7 @@ export function SectionContainerBordered({ id, children, className }: MainSectio
 
 export function SectionContainerBorderless({ id, children, className }: MainSectionProps) {
   return (
-    <section id={id} className={`flex items-center p-6 ${className}`}>
+    <section id={id} className={`flex items-center ${className}`}>
       <div className="flex-col m-6 space-y-3 w-full">
         {children}
       </div>
