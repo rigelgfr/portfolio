@@ -11,9 +11,9 @@ export default function Page() {
   return (
     <main className="flex justify-center">
       <Starfield
-        starCount={750}
+        starCount={500}
         starColor={[255, 255, 255]}
-        speedFactor={0.05}
+        speedFactor={0.03}
         backgroundColor="black"
       />
 
