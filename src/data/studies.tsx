@@ -12,4 +12,11 @@ export const studies: ExperienceCardRowProps[] = [
             "3.75 GPA",
         ]
     },
+    {
+        image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL48BJF1MmBJrNZlkskzZoPwyptP9b7hhpiQ&s",
+        institute: "John Paul's School",
+        link: "https://johnpaulschool.sch.id/",
+        period: "2010 - 2022",
+        work: "High School Diploma",
+    }
 ]
