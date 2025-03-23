@@ -24,9 +24,9 @@ export function EmailButton() {
     return (
         <span onClick={handleCopyEmail} className="transition cursor-pointer hover:animate-button-tilt ease-in-out duration-500">
             {copied ? (
-            <MdMarkEmailRead className="w-6 h-6 transition" />
+            <MdMarkEmailRead className="size-5 sm:size-6 transition" />
             ) : (
-            <MdEmail className="w-6 h-6 transition" />
+            <MdEmail className="size-5 sm:size-6 transition" />
             )}
         </span>
     )
