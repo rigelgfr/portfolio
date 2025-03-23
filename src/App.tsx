@@ -1,11 +1,11 @@
 import { AboutSection } from "./components/sections/About";
-import { Content } from "./components/sections/Navigation";
 import { SkillsSection } from "./components/sections/Skills";
 import { ExperienceSection } from "./components/sections/Experience";
 import { Toaster } from "./components/ui/sonner";
 import { ProjectsSection } from "./components/sections/Projects";
 import { Footer } from "./components/sections/Footer";
 import StarfieldBackground from "./components/bg/Particles";
+import FloatingNavbar from "./components/ui/navbar";
 
 export default function Page() {
   return (
@@ -13,7 +13,7 @@ export default function Page() {
       <StarfieldBackground />
 
       <div className="w-full sm:w-[600px] xl:w-[800px]">
-        <Content />
+        <FloatingNavbar />
         <AboutSection />
         <SkillsSection />
         <ExperienceSection />

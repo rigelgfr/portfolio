@@ -1,10 +1,11 @@
 import React from "react"
-import { twMerge } from "tailwind-merge" // Optional, for proper class merging
+import { twMerge } from "tailwind-merge"
 
 export type SocialsProps = {
-    icon: React.ReactElement
+    icon?: React.ReactNode
     link: string
     className?: string
+    label?: string
 }
 
 export function Socials({ icon, link, className }: SocialsProps) {
