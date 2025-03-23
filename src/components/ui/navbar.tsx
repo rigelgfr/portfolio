@@ -8,9 +8,11 @@ import { cn } from "@/lib/utils"
 import { socials } from "@/data/socials"
 import { SocialsProps } from "./socials"
 import { FaCode, FaSuitcase, FaUser } from "react-icons/fa"
+import { scrollToSection } from "@/utils/scroll"
 
 export default function FloatingNavbar() {
   const [showSocial, setShowSocial] = useState(false)
+  const navbarHeight = 96;
 
   const pageLinks: SocialsProps[] = [
     { label: "about", link: "#about", icon: <FaUser className="w-6 h-6"/> },
@@ -89,9 +91,22 @@ export default function FloatingNavbar() {
                 animate="visible"
                 exit="exit"
               >
-                {(showSocial ? socials : pageLinks).map((item, index) => (
-                  <NavButton key={index} item={item} variants={itemVariants} />
-                ))}
+                {showSocial ? (
+                  // Social links - open in new tab
+                  socials.map((item, index) => (
+                    <SocialButton key={index} item={item} variants={itemVariants} />
+                  ))
+                ) : (
+                  // Page section links - custom scroll behavior
+                  pageLinks.map((item, index) => (
+                    <NavButton 
+                      key={index} 
+                      item={item} 
+                      variants={itemVariants}
+                      navbarHeight={navbarHeight}
+                    />
+                  ))
+                )}
               </motion.div>
             </AnimatePresence>
           </div>
@@ -122,15 +137,6 @@ export default function FloatingNavbar() {
                 />
               )}
             </AnimatePresence>
-
-            {/* Pulse effect when cycling */}
-            <motion.div
-              key={showSocial ? "social-pulse" : "pages-pulse"}
-              initial={{ scale: 0.8, opacity: 0.5 }}
-              animate={{ scale: 1.5, opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="absolute inset-0 rounded-full bg-primary"
-            />
           </motion.button>
         </div>
 
@@ -141,15 +147,31 @@ export default function FloatingNavbar() {
   )
 }
 
-function NavButton({ item, variants }: { item: SocialsProps; variants: any }) {
+// Page section navigation with custom scroll
+function NavButton({ 
+  item, 
+  variants, 
+  navbarHeight = 64 
+}: { 
+  item: SocialsProps; 
+  variants: any; 
+  navbarHeight?: number;
+}) {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Remove the # from the link to get the ID
+    const id = item.link.replace('#', '');
+    scrollToSection(id, navbarHeight);
+  };
+
   return (
     <motion.a
       href={item.link}
+      onClick={handleClick}
       className="flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-full transition-colors"
       variants={variants}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      rel="noopener noreferrer"
     >
       {item.icon}
       <span className="text-sm font-medium hidden sm:inline">{item.label}</span>
@@ -157,3 +179,20 @@ function NavButton({ item, variants }: { item: SocialsProps; variants: any }) {
   )
 }
 
+// Social links - open in new tab
+function SocialButton({ item, variants }: { item: SocialsProps; variants: any }) {
+  return (
+    <motion.a
+      href={item.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center gap-1 px-2 sm:px-3 py-1.5 rounded-full transition-colors"
+      variants={variants}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      {item.icon}
+      <span className="text-sm font-medium hidden sm:inline">{item.label}</span>
+    </motion.a>
+  )
+}
