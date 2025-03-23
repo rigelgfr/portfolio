@@ -19,9 +19,8 @@ export default function Page() {
         <ExperienceSection />
         <ProjectsSection />
         <Footer />
-  
-
       </div>
+      
       <Toaster position="bottom-left" />
 
     </main>
