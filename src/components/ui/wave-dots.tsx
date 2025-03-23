@@ -54,7 +54,7 @@ const WaveLoadingDots: React.FC = () => {
   };
   
   return (
-    <span className="flex justify-center mt-10 text-lg font-semibold">
+    <span className="flex justify-center mt-10 text-md sm:text-lg font-semibold">
       <h1 className="flex items-center">
         more in the works
         <span className="inline-flex ml-1 space-x-0.5">

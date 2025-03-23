@@ -66,11 +66,11 @@ export function ExperienceCardRow({ image, institute, link, period, work, descri
       </a>
         
       <div className="flex flex-1 flex-col justify-start mr-4">
-        <h1 className="text-md font-semibold">{institute}</h1>
+        <h1 className="text-sm sm:text-md font-semibold">{institute}</h1>
         <p className="text-xs mb-1">{period}</p>
         <h1 className="text-sm text-grey-light">{work}</h1>
         {description && <p className="text-sm">{description}</p>}
-        <ul className="ml-4 list-outside list-disc marker:text-grey-light">
+        <ul className="ml-4 text-xs list-outside list-disc marker:text-grey-light">
           {points && points.map((point, index) => <li className="text-sm" key={index}>{point}</li>)}
         </ul>
       </div>     
@@ -146,7 +146,7 @@ export function ProjectCard({ app_name, formality, description, image, source_co
         
         <div className="space-y-1">
           <div className="flex items-center space-x-2">
-            <h1 className="text-md font-semibold w-full">{app_name}</h1>
+            <h1 className="text-sm sm:text-md font-semibold w-full">{app_name}</h1>
             <span className="text-sm text-grey-light w-full text-end self-end">{formality}</span>
           </div>
 

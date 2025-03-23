@@ -86,7 +86,7 @@ export default function FloatingNavbar() {
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={showSocial ? "social" : "pages"}
-                className="flex items-center justify-center gap-12 sm:gap-4 "
+                className="flex items-center justify-center gap-8 sm:gap-4 "
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"

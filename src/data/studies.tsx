@@ -6,9 +6,10 @@ export const studies: ExperienceCardRowProps[] = [
         institute: "President University",
         link: "https://president.ac.id/",
         period: "2022 - Present",
-        work: "Informatics Undergraduate, AI concentration",
+        work: "Informatics Undergraduate",
         points: [
-            "Currently implementing a face recognition and trend prediction module into a visitor management system as my final project.",
+            "Currently implementing a face recognition and trend prediction module into a visitor management system as my final project",
+            "Enrolled in AI concentration",
             "3.75 GPA",
         ]
     },
