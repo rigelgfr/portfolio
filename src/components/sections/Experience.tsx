@@ -1,4 +1,3 @@
-import { FaSuitcase } from "react-icons/fa";
 import { SectionContainerBorderless } from "../ui/section-container";
 import { SectionHeader } from "../ui/section-header";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
@@ -11,7 +10,6 @@ export function ExperienceSection() {
     <SectionContainerBorderless id="experience">
       <div className="flex-col space-y-4">
         <SectionHeader
-          icon={<FaSuitcase className="w-4 h-4"/>}
           title="experiences"
           description="my work experience and studies"
         />

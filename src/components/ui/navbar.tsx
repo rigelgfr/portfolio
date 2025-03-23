@@ -2,12 +2,13 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { FaGear, FaRepeat } from "react-icons/fa6"
+import { FaCode, FaRepeat } from "react-icons/fa6"
+import { LuUserRound } from "react-icons/lu";
+import { GoGear } from "react-icons/go";
+import { PiBriefcase } from "react-icons/pi";
 import { cn } from "@/lib/utils"
-
 import { socials } from "@/data/socials"
 import { SocialsProps } from "./socials"
-import { FaCode, FaSuitcase, FaUser } from "react-icons/fa"
 import { scrollToSection } from "@/utils/scroll"
 
 export default function FloatingNavbar() {
@@ -15,9 +16,9 @@ export default function FloatingNavbar() {
   const navbarHeight = 96;
 
   const pageLinks: SocialsProps[] = [
-    { label: "about", link: "#about", icon: <FaUser className="w-6 h-6"/> },
-    { label: "tech", link: "#technologies", icon: <FaGear className="w-6 h-6"/> },
-    { label: "experience", link: "#experience", icon: <FaSuitcase className="w-6 h-6"/> },
+    { label: "about", link: "#about", icon: <LuUserRound className="w-6 h-6"/> },
+    { label: "tech", link: "#technologies", icon: <GoGear className="w-6 h-6"/> },
+    { label: "experience", link: "#experience", icon: <PiBriefcase className="w-6 h-6"/> },
     { label: "projects", link: "#projects", icon: <FaCode className="w-6 h-6"/> },
   ]
 
@@ -63,7 +64,7 @@ export default function FloatingNavbar() {
     },
     exit: {
       opacity: 0,
-      x: 100, // Exit to right (toward cycle button)
+      x: 100,
       scale: 0.5,
       transition: {
         duration: 0.2,
@@ -73,9 +74,9 @@ export default function FloatingNavbar() {
   }
 
   return (
-    <div className="fixed top-6 left-0 right-0 flex justify-center z-50">
+    <div className="fixed top-8 left-0 right-0 flex justify-center z-50">
       <motion.div
-        className="relative w-full max-w-xl mx-4 rounded-lg backdrop-blur-md"
+        className="relative w-full max-w-xl mx-4 rounded-full backdrop-blur-md"
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3 }}
@@ -174,7 +175,7 @@ function NavButton({
       whileTap={{ scale: 0.95 }}
     >
       {item.icon}
-      <span className="text-sm font-medium hidden sm:inline">{item.label}</span>
+      <span className="text-md font-medium ml-0.5 hidden sm:inline">{item.label}</span>
     </motion.a>
   )
 }
@@ -192,7 +193,7 @@ function SocialButton({ item, variants }: { item: SocialsProps; variants: any })
       whileTap={{ scale: 0.95 }}
     >
       {item.icon}
-      <span className="text-sm font-medium hidden sm:inline">{item.label}</span>
+      <span className="text-md font-medium ml-0.5 hidden sm:inline">{item.label}</span>
     </motion.a>
   )
 }

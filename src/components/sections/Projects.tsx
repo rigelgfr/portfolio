@@ -1,4 +1,3 @@
-import { FaCode } from "react-icons/fa";
 import { SectionContainerBorderless } from "../ui/section-container";
 import { SectionHeader } from "../ui/section-header";
 import { projects } from "@/data/projects";
@@ -10,7 +9,6 @@ export function ProjectsSection() {
       <SectionContainerBorderless id="projects">
         <div className="flex-col space-y-3">
           <SectionHeader
-            icon={<FaCode className="w-4 h-4"/>}
             title="projects"
             description="some projects i made/contributed in"
             separator
