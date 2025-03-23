@@ -1,5 +1,5 @@
 import { AboutSection } from "./components/sections/About";
-import { Content } from "./components/sections/Content";
+import { Content } from "./components/sections/Navigation";
 import { SkillsSection } from "./components/sections/Skills";
 import { ExperienceSection } from "./components/sections/Experience";
 import { Toaster } from "./components/ui/sonner";
