@@ -5,10 +5,12 @@ import { ExperienceSection } from "./components/sections/Experience";
 import { Toaster } from "./components/ui/sonner";
 import { ProjectsSection } from "./components/sections/Projects";
 import { Footer } from "./components/sections/Footer";
+import StarfieldBackground from "./components/bg/Particles";
 
 export default function Page() {
   return (
     <main className="flex justify-center">
+      <StarfieldBackground />
 
       <div className="w-full sm:w-[600px] xl:w-[800px]">
         <Content />
