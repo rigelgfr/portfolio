@@ -96,8 +96,8 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({ images, app_name })
                     
                     {/* Error state */}
                     {errorImages[index] && currentImageIndex === index && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
-                        <p className="text-sm text-gray-500">Failed to load image</p>
+                      <div className="absolute inset-0 flex items-center justify-center border">
+                        <p className="text-sm text-grey-light">Failed to load image</p>
                       </div>
                     )}
                   </div>
