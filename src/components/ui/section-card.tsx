@@ -24,7 +24,7 @@ export function SkillCard({ skill, description, icon, animation }: SkillCardProp
       </span>
       <div className="flex-col">
         <h1 className="text-sm">{skill}</h1>
-        <p className="text-xs text-grey-light">{description}</p>
+        <p className="text-[10px] sm:text-xs text-grey-light">{description}</p>
       </div>
     </div>
   );
