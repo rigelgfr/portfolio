@@ -25,14 +25,13 @@ export const projects: ProjectCardProps[] = [
     {
         app_name: "My Portfolio",
         formality: "personal, solo",
-        description: "my own custom portfolio site since i hate using pdfs, its responsive and slick",
+        description: "my own custom portfolio site, it's responsive, slick, and makes my life easier",
         job: [
             "everything", 
         ],
-        thumbnail: "/ss/1.webp",
         image: [
-            "/ss/1.webp",
-            "/ss/2.webp",
+            "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/1.webp",
+            "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/2.webp",
         ],
         source_code: "https://github.com/rigelgfr/portfolio",
         stack: [
@@ -46,12 +45,11 @@ export const projects: ProjectCardProps[] = [
     {
         app_name: "BRJ-WRM",
         formality: "client, solo",
-        description: "warehouse report management (WRM) is an internal web app that displays the company's inbound and outbound data as charts and tables.",
+        description: "an internal web app that displays the company's inbound and outbound data as charts and tables",
         job: [
             "fullstack, created the app's frontend, including components and styling", 
             "built the database schema and queries using Prisma and PostgreSQL",
         ],
-        thumbnail: "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/3.webp?raw=true",
         image: [
             "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/1.webp?raw=true",
             "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/2.webp?raw=true",
@@ -70,12 +68,11 @@ export const projects: ProjectCardProps[] = [
     {
         app_name: "UtacyLyrics",
         formality: "assignment, solo",
-        description: "a lyrics web app that allows romanization of Japanese lyrics (characters) and more by leveraging Gemini API.",
+        description: "a lyrics web app that can romanize Japanese lyrics (characters) and more using Gemini API",
         job: [
             "fullstack, created the app's frontend and styling",
             "integrated the Genius API for lyrics fetching and Gemini API for romanization",
         ],
-        thumbnail: "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/3.webp?raw=true",
         image: [
             "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/1.webp?raw=true",
             "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/2.webp?raw=true",

@@ -84,13 +84,12 @@ export type ProjectCardProps = {
   formality: string;
   description: string;
   job: string[];
-  thumbnail?: string;
   image: string[];
   source_code: string;
   stack: StackBadgeProps[];
 };
 
-export function ProjectCard({ app_name, formality, description, thumbnail, image, source_code, stack, job }: ProjectCardProps) {
+export function ProjectCard({ app_name, formality, description, image, source_code, stack, job }: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -113,7 +112,7 @@ export function ProjectCard({ app_name, formality, description, thumbnail, image
                   )}
 
                   <img 
-                    src={thumbnail} 
+                    src={image[image.length - 1]} 
                     alt={app_name} 
                     className={`w-full h-full object-contain transition duration-300 group-hover:opacity-70 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                     onLoad={handleImageLoad}
