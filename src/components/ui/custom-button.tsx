@@ -62,6 +62,7 @@ export function SourceCodeButton({ source }: { source: string }) {
     <Button
       size="sm"
       variant="link"
+      className="select-none"
     >
       <a href={source} className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
         <FaGithub />
