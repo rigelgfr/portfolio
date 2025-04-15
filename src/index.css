@@ -39,6 +39,12 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@media (max-width: 767px) {
+  :root {
+    --border: oklch(1 0 0 / 20%);
+  }
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
