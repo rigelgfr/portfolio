@@ -10,7 +10,7 @@ export function SkillsSection() {
         
         <SectionHeader
           title="technologies"
-          description="what i use, still learning and improving"
+          description="still learning and improving"
           separator
         />
         

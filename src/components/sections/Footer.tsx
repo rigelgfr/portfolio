@@ -6,7 +6,7 @@ import { Socials } from "../ui/socials";
 
 export function Footer() {
     return (
-        <SectionContainerBorderless id="footer" className="mt-16">
+        <SectionContainerBorderless id="footer" className="mt-4 sm:mt-16">
             <Separator />
 
             <div className="flex flex-col mt-10 space-y-10">

@@ -10,7 +10,7 @@ export function ProjectsSection() {
         <div className="flex-col space-y-3">
           <SectionHeader
             title="projects"
-            description="some projects i made/contributed in"
+            description="projects i made/contributed in"
             separator
           />
 

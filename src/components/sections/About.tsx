@@ -47,7 +47,7 @@ export function AboutSection() {
           
           {/* Description */}
           <div className="flex-col text-end items-center border-r-2 border-white pr-2">
-            <h1 className="text-sm sm:text-md font-semibold">Junior Web Developer</h1>
+            <h1 className="text-sm sm:text-md font-semibold">Junior Web Dev</h1>
             <h1 className="text-xs sm:text-sm text-grey-light"><span className="text-white">Frontend</span> Focused</h1>
           </div>
         </div>
