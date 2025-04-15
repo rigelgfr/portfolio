@@ -4,7 +4,7 @@ import { MdEmail, MdMarkEmailRead } from "react-icons/md";
 
 import { Button } from "./button";
 import { downloadFile } from "@/utils/downloadCV";
-import { FaFile, FaGithub } from "react-icons/fa";
+import { FaFile, FaGithub, FaGlobe } from "react-icons/fa";
 
 export function EmailButton() {
     const [copied, setCopied] = useState(false)
@@ -62,11 +62,26 @@ export function SourceCodeButton({ source }: { source: string }) {
     <Button
       size="sm"
       variant="link"
-      className="select-none"
+      className="select-none px-0"
     >
       <a href={source} className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
         <FaGithub />
         <p>source code</p>
+      </a>
+    </Button>
+  )
+}
+
+export function LiveButton({ source }: { source: string }) {
+  return (
+    <Button
+      size="sm"
+      variant="link"
+      className="select-none px-0"
+    >
+      <a href={source} className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+        <FaGlobe />
+        <p>LIVE</p>
       </a>
     </Button>
   )

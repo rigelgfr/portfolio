@@ -22,7 +22,9 @@ export function ProjectsSection() {
                 formality={projects.formality}
                 description={projects.description}
                 job={projects.job}
+                thumbnail={projects.thumbnail}
                 image={projects.image}
+                live={projects.live}
                 source_code={projects.source_code}
                 stack={projects.stack}
               />

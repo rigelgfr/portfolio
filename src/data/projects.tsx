@@ -1,6 +1,6 @@
 import { ProjectCardProps } from "@/components/ui/section-card";
 import { FaNodeJs, FaReact } from "react-icons/fa";
-import { SiAxios, SiExpress, SiGenius, SiGooglegemini, SiNextdotjs, SiPostgresql, SiPrisma, SiShadcnui, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
+import { SiAxios, SiExpress, SiGenius, SiGooglegemini, SiNextdotjs, SiOnnx, SiPostgresql, SiPrisma, SiRoboflow, SiShadcnui, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
 
 export const STACKS = {
     // Frontend stacks
@@ -18,10 +18,40 @@ export const STACKS = {
     AXIOS: { icon: <SiAxios />, stack: "Axios", frontend: false },
     GEMINI: { icon: <SiGooglegemini />, stack: "Gemini", frontend: false },
     GENIUS: { icon: <SiGenius />, stack: "Genius", frontend: false },
-    PRISMA: { icon: <SiPrisma />, stack: "Prisma", frontend: false }
+    PRISMA: { icon: <SiPrisma />, stack: "Prisma", frontend: false },
+    ONNX: { icon: <SiOnnx />, stack: "ONNX", frontend: false },
+    ROBOFLOW: { icon: <SiRoboflow />, stack: "Roboflow", frontend: false },
   }
 
-export const projects: ProjectCardProps[] = [ 
+export const projects: ProjectCardProps[] = [
+    {
+        app_name: "Post Generator",
+        formality: "client, solo",
+        description: "an IG post generator for @akunimpact, utilizing a custom trained YOLOv8 object detection model",
+        job: [
+            "everything", 
+        ],
+        thumbnail: "https://raw.githubusercontent.com/rigelgfr/akunimpact-post-generator/refs/heads/main/public/screenshots/app4.webp",
+
+        image: [
+            "https://raw.githubusercontent.com/rigelgfr/akunimpact-post-generator/refs/heads/main/public/screenshots/app1.webp",
+            "https://raw.githubusercontent.com/rigelgfr/akunimpact-post-generator/refs/heads/main/public/screenshots/app2.webp",
+            "https://raw.githubusercontent.com/rigelgfr/akunimpact-post-generator/refs/heads/main/public/screenshots/app3.webp",
+            "https://raw.githubusercontent.com/rigelgfr/akunimpact-post-generator/refs/heads/main/public/screenshots/app4.webp",
+            "https://raw.githubusercontent.com/rigelgfr/akunimpact-post-generator/refs/heads/main/public/screenshots/app5.webp",
+            "https://raw.githubusercontent.com/rigelgfr/akunimpact-post-generator/refs/heads/main/public/screenshots/app6.webp",
+        ],
+        live: "https://akunimpact-post-generator.vercel.app/",
+        source_code: "https://github.com/rigelgfr/akunimpact-post-generator",
+        stack: [
+            STACKS.NEXTJS,
+            STACKS.TYPESCRIPT,
+            STACKS.TAILWIND,
+            STACKS.SHADCN,
+            STACKS.ONNX,
+            STACKS.ROBOFLOW
+        ]
+    }, 
     {
         app_name: "My Portfolio",
         formality: "personal, solo",
@@ -29,10 +59,12 @@ export const projects: ProjectCardProps[] = [
         job: [
             "everything", 
         ],
+        thumbnail: "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/1.webp",
         image: [
             "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/1.webp",
             "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/2.webp",
         ],
+        live: "https://rigelgfr.github.io/portfolio",
         source_code: "https://github.com/rigelgfr/portfolio",
         stack: [
             STACKS.REACT,
@@ -50,6 +82,7 @@ export const projects: ProjectCardProps[] = [
             "fullstack, created the app's frontend, including components and styling", 
             "built the database schema and queries using Prisma and PostgreSQL",
         ],
+        thumbnail: "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/3.webp?raw=true",
         image: [
             "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/1.webp?raw=true",
             "https://github.com/rigelgfr/brj-wrm/blob/master/public/ss/2.webp?raw=true",
@@ -73,6 +106,7 @@ export const projects: ProjectCardProps[] = [
             "fullstack, created the app's frontend and styling",
             "integrated the Genius API for lyrics fetching and Gemini API for romanization",
         ],
+        thumbnail: "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/3.webp?raw=true",
         image: [
             "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/1.webp?raw=true",
             "https://github.com/rigelgfr/utacy-lyrics/blob/main/src/img/screenshots/2.webp?raw=true",

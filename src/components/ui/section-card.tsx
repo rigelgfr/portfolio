@@ -5,7 +5,7 @@ import {
   DialogTrigger,
 } from "./dialog";
 import { Badge } from "./badge";
-import { SourceCodeButton } from "./custom-button";
+import { LiveButton, SourceCodeButton } from "./custom-button";
 import { Pokeball } from "./pokeball";
 import { ProjectsDialog } from "./projects-dialog";
 
@@ -84,12 +84,14 @@ export type ProjectCardProps = {
   formality: string;
   description: string;
   job: string[];
+  thumbnail: string;
   image: string[];
+  live?: string;
   source_code: string;
   stack: StackBadgeProps[];
 };
 
-export function ProjectCard({ app_name, formality, description, image, source_code, stack, job }: ProjectCardProps) {
+export function ProjectCard({ app_name, formality, description, thumbnail, image, live, source_code, stack }: ProjectCardProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -112,7 +114,7 @@ export function ProjectCard({ app_name, formality, description, image, source_co
                   )}
 
                   <img 
-                    src={image[image.length - 1]} 
+                    src={thumbnail}
                     alt={app_name} 
                     className={`w-full h-full object-contain transition duration-300 group-hover:opacity-70 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                     onLoad={handleImageLoad}
@@ -125,25 +127,13 @@ export function ProjectCard({ app_name, formality, description, image, source_co
               </DialogTrigger>
               <ProjectsDialog
                 app_name={app_name}
-                description={description}
-                formality={formality}
                 image={image}
                 stack={stack}
-                job={job}
-                source_code={source_code}
               />
             </Dialog>
           </div>
         )}
-
-        <div className="flex min-md:hidden items-center">
-          <div className="flex flex-wrap gap-2 flex-grow">
-            {stack.map((stack, index) => (
-              <StackBadge key={index} icon={stack.icon} stack={stack.stack} frontend={stack.frontend} />
-            ))}
-          </div>
-        </div>
-        
+      
         <div className="space-y-1">
           <div className="flex items-center space-x-2">
             <h1 className="text-sm sm:text-md font-semibold w-full">{app_name}</h1>
@@ -157,7 +147,8 @@ export function ProjectCard({ app_name, formality, description, image, source_co
       </div>
       
       <div className="mt-auto pt-3">
-        <div className="flex justify-end">
+        <div className="flex justify-end space-x-3">
+          {live && <LiveButton source={live} />}
           <SourceCodeButton source={source_code} />
         </div>
       </div>
