@@ -7,7 +7,10 @@ import {
   CarouselPrevious,
   type CarouselApi
 } from "@/components/ui/carousel";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Pokeball } from './pokeball';
+import { Button } from './button';
+import { LuFullscreen } from 'react-icons/lu';
 
 interface ProjectsCarouselProps {
   images: string[];
@@ -19,10 +22,10 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({ images, app_name })
   const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
   const [errorImages, setErrorImages] = useState<Record<number, boolean>>({});
   const [api, setApi] = useState<CarouselApi | null>(null);
+  const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
 
   // Preload images
   useEffect(() => {
-    // Start preloading all images
     images.forEach((src, index) => {
       const img = new Image();
       
@@ -40,7 +43,6 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({ images, app_name })
         }));
       };
       
-      // Start loading the image
       img.src = src;
     });
   }, [images]);
@@ -55,8 +57,6 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({ images, app_name })
     };
 
     api.on("select", handleSelect);
-    
-    // Initial selection
     handleSelect();
 
     return () => {
@@ -64,10 +64,49 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({ images, app_name })
     };
   }, [api]);
 
+  // Toggle fullscreen view of current image
+  const toggleFullscreen = () => {
+    setIsFullscreen(!isFullscreen);
+  };
+
+  // Handle ESC key to exit fullscreen
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isFullscreen) {
+        setIsFullscreen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isFullscreen]);
+
   return (
     <>
       {images.length > 0 && (
         <div className="relative w-full">
+          {/* Fullscreen view */}
+          {isFullscreen && (
+            <div className="fixed inset-0 bg-black z-50 flex items-center justify-center" onClick={toggleFullscreen}>
+              <img 
+                src={images[currentImageIndex]} 
+                alt={`${app_name} ${currentImageIndex + 1}`} 
+                className="max-h-screen max-w-full object-contain p-4"
+              />
+              <button 
+                className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setIsFullscreen(false);
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          )}
+
           <Carousel
             className="w-full"
             setApi={setApi}
@@ -75,51 +114,67 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({ images, app_name })
             <CarouselContent>
               {images.map((imageUrl: string, index: number) => (
                 <CarouselItem key={`image-${index}-${imageUrl}`}>
-                  <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-                    {/* Loading indicator */}
-                    {(!loadedImages[index] && currentImageIndex === index) && (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <Pokeball />
-                      </div>
-                    )}
-                    
-                    {/* Image */}
-                    <img 
-                      src={imageUrl} 
-                      alt={`${app_name} ${index + 1}`} 
-                      className={`w-full h-full select-none object-contain transition-opacity duration-300 ${
-                        loadedImages[index] ? 'opacity-100' : 'opacity-0'
-                      }`}
-                      draggable="false"
-                      loading='lazy'
-                    />
-                    
-                    {/* Error state */}
-                    {errorImages[index] && currentImageIndex === index && (
-                      <div className="absolute inset-0 flex items-center justify-center border">
-                        <p className="text-sm text-grey-light">Failed to load image</p>
-                      </div>
-                    )}
-                  </div>
+                  {/* Using Shadcn AspectRatio to properly maintain aspect ratio */}
+                  <AspectRatio ratio={16/9} className="rounded-lg overflow-hidden">
+                    <div className="relative w-full h-full flex items-center justify-center">
+                      {/* Loading indicator */}
+                      {(!loadedImages[index] && currentImageIndex === index) && (
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <Pokeball />
+                        </div>
+                      )}
+                      
+                      {/* Image with preserved aspect ratio */}
+                      <img 
+                        src={imageUrl} 
+                        alt={`${app_name} ${index + 1}`} 
+                        className={`w-full h-full object-contain transition-opacity duration-300 cursor-pointer ${
+                          loadedImages[index] ? 'opacity-100' : 'opacity-0'
+                        }`}
+                        draggable="false"
+                        loading="lazy"
+                        onClick={toggleFullscreen}
+                      />
+                      
+                      {/* Error state */}
+                      {errorImages[index] && currentImageIndex === index && (
+                        <div className="absolute inset-0 flex items-center justify-center border">
+                          <p className="text-sm text-gray-500">Failed to load image</p>
+                        </div>
+                      )}
+                    </div>
+                  </AspectRatio>
                 </CarouselItem>
               ))}
             </CarouselContent>
             
-            {/* Navigation arrows positioned at edges for better UX */}
+            {/* Navigation arrows */}
             <CarouselPrevious 
-              className="absolute left-2 top-1/2 -translate-y-1/2 z-10 h-10 w-10 opacity-70 hover:opacity-100 transition-opacity" 
+              className="absolute left-1 md:left-2 top-1/2 -translate-y-1/2 z-10 h-8 w-8 md:h-10 md:w-10 opacity-70 hover:opacity-100 transition-opacity" 
             />
             <CarouselNext 
-              className="absolute right-2 top-1/2 -translate-y-1/2 z-10 h-10 w-10 opacity-70 hover:opacity-100 transition-opacity" 
+              className="absolute right-1 md:right-2 top-1/2 -translate-y-1/2 z-10 h-8 w-8 md:h-10 md:w-10 opacity-70 hover:opacity-100 transition-opacity" 
             />
           </Carousel>
           
-          {/* Image counter */}
-          {images.length > 1 && (
-            <div className="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded-full z-10">
-              {currentImageIndex + 1} / {images.length}
-            </div>
-          )}
+          {/* Image counter and fullscreen button */}
+          <div className="absolute bottom-2 right-2 flex items-center gap-2 z-10">
+            {/* Fullscreen button */}
+            <Button 
+              onClick={toggleFullscreen}
+              className="bg-black/50 text-white p-1 rounded-full hover:bg-black/70 transition-colors"
+              variant="ghost"
+            >
+              <LuFullscreen />
+            </Button>
+            
+            {/* Image counter */}
+            {images.length > 1 && (
+              <div className="bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+                {currentImageIndex + 1} / {images.length}
+              </div>
+            )}
+          </div>
         </div>
       )}
     </>
