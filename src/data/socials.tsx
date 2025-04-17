@@ -9,7 +9,7 @@ export const socials: SocialsProps[] = [
     },
     { 
         icon: <FaLinkedin className="size-5 sm:size-6" />, 
-        link: "https://www.linkedin.com/in/rigel-gregory-feliciano-rahateen-b6a3b3312/",
+        link: "https://www.linkedin.com/in/rigelgfr",
         label: "linkedin"
     },
     {
