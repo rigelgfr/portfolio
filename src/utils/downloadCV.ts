@@ -1,52 +1,48 @@
-import { toast } from "sonner";
-
-interface DownloadFileOptions {
-  url: string;
-  fileName?: string;
-  successMessage?: string;
-  errorMessage?: string;
-}
+/**
+ * Utility functions for downloading CV file
+ */
 
 /**
- * A utility function that downloads a file and shows Sonner toast notifications
+ * Downloads a CV file from the server
+ * 
+ * @param url - The URL of the CV file to download
+ * @param fileName - The name to save the file as
+ * @returns Promise that resolves with success or rejects with error
  */
-export const downloadFile = ({
-    url,
-    fileName = "cv.pdf",
-    successMessage = "Download started",
-    errorMessage = "Failed to download file"
-  }: DownloadFileOptions): void => {
-    try {
-      fetch(url)
-        .then(response => response.blob())
-        .then(blob => {
-          const blobUrl = window.URL.createObjectURL(blob);
-          
-          const link = document.createElement("a");
-          link.href = blobUrl;
-          link.download = fileName;
-          link.style.display = "none";
-          
-          document.body.appendChild(link);
-          link.click();
-          
-          setTimeout(() => {
-            document.body.removeChild(link);
-            window.URL.revokeObjectURL(blobUrl);
-          }, 100);
-          
-          toast.success(successMessage, {
-            duration: 3000,
-          });
-        })
-        .catch(error => {
-          throw error;
-        });
-    } catch (error) {
-      console.error("Download failed:", error);
-      
-      toast.error(errorMessage, {
-        duration: 3000,
-      });
+export const downloadCV = async (url: string, fileName: string): Promise<void> => {
+  try {
+    // Fetch the file
+    const response = await fetch(url);
+    
+    // Check if the fetch was successful
+    if (!response.ok) {
+      throw new Error(`Failed to download file: ${response.status} ${response.statusText}`);
     }
-  };
+    
+    // Convert the response to a blob
+    const blob = await response.blob();
+    
+    // Create a URL for the blob
+    const downloadUrl = window.URL.createObjectURL(blob);
+    
+    // Create a temporary anchor element
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = fileName;
+    
+    // Append to the document
+    document.body.appendChild(link);
+    
+    // Trigger the download
+    link.click();
+    
+    // Clean up
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(downloadUrl);
+    
+    return Promise.resolve();
+  } catch (error) {
+    console.error('Error downloading CV:', error);
+    return Promise.reject(error);
+  }
+};

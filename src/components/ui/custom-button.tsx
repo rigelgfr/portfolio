@@ -3,8 +3,9 @@ import { copyToClipboard } from "@/utils/copyEmail";
 import { MdEmail, MdMarkEmailRead } from "react-icons/md";
 
 import { Button } from "./button";
-import { downloadFile } from "@/utils/downloadCV";
+import { downloadCV } from "@/utils/downloadCV";
 import { FaFile, FaGithub, FaGlobe } from "react-icons/fa";
+import { toast } from "sonner";
 
 export function EmailButton() {
     const [copied, setCopied] = useState(false)
@@ -33,14 +34,28 @@ export function EmailButton() {
 }
 
 export function CVButton() {
-  const handleDownloadCV = () => {
-      downloadFile({
-        url: "/file/cv.pdf",
-        fileName: "Rigel_Gregory_CV.pdf",
-        successMessage: "CV downloaded successfully!",
-        errorMessage: "Failed to download CV. Please try again."
-      });
-    };
+  const [isDownloading, setIsDownloading] = useState(false);
+  
+  const handleDownloadCV = async () => {
+    console.log("Starting CV download");
+    setIsDownloading(true);
+    
+    try {
+      await downloadCV(
+        "/portfolio/file/Rigel_Gregory_CV.pdf",
+        "Rigel_Gregory_CV.pdf"
+      );
+      
+      // Show success message
+      toast.success("CV downloaded successfully!");
+    } catch (error) {
+      // Show error message
+      toast.error("Failed to download CV. Please try again.");
+      console.error("CV download error:", error);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
 
   return (
     <div className="flex self-center items-center gap-2">
@@ -48,13 +63,14 @@ export function CVButton() {
         className="border-1 bg-transparent text-white hover:bg-accent/25"
         variant="default"
         onClick={handleDownloadCV}
+        disabled={isDownloading}
       >
         <FaFile />
-        CV
+        {isDownloading ? "Downloading..." : "CV"}
       </Button>
       <p className="text-sm text-grey-light">.pdf</p>
     </div>
-  )
+  );
 }
 
 export function SourceCodeButton({ source }: { source: string }) {
