@@ -42,7 +42,7 @@ export function CVButton() {
     
     try {
       await downloadCV(
-        "/portfolio/file/Rigel_Gregory_CV.pdf",
+        "https://raw.githubusercontent.com/rigelgfr/portfolio/main/public/file/Rigel_Gregory_CV.pdf",
         "Rigel_Gregory_CV.pdf"
       );
       
