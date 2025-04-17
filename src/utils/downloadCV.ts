@@ -11,34 +11,21 @@
  */
 export const downloadCV = async (url: string, fileName: string): Promise<void> => {
   try {
-    // Fetch the file
-    const response = await fetch(url);
-    
-    // Check if the fetch was successful
-    if (!response.ok) {
-      throw new Error(`Failed to download file: ${response.status} ${response.statusText}`);
-    }
-    
-    // Convert the response to a blob
-    const blob = await response.blob();
-    
-    // Create a URL for the blob
-    const downloadUrl = window.URL.createObjectURL(blob);
-    
-    // Create a temporary anchor element
+    // Create a direct link to download the file
     const link = document.createElement('a');
-    link.href = downloadUrl;
-    link.download = fileName;
     
-    // Append to the document
-    document.body.appendChild(link);
+    // Use the direct GitHub raw URL without fetching it first
+    link.href = url;
+    
+    // Set attributes for download
+    link.setAttribute('download', fileName);
+    link.setAttribute('target', '_blank');
+    link.setAttribute('rel', 'noopener noreferrer');
     
     // Trigger the download
+    document.body.appendChild(link);
     link.click();
-    
-    // Clean up
     document.body.removeChild(link);
-    window.URL.revokeObjectURL(downloadUrl);
     
     return Promise.resolve();
   } catch (error) {
