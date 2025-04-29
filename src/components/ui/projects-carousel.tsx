@@ -11,6 +11,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Pokeball } from './pokeball';
 import { Button } from './button';
 import { LuFullscreen } from 'react-icons/lu';
+import { GoX } from 'react-icons/go';
 
 interface ProjectsCarouselProps {
   images: string[];
@@ -91,19 +92,18 @@ const ProjectsCarousel: React.FC<ProjectsCarouselProps> = ({ images, app_name })
               <img 
                 src={images[currentImageIndex]} 
                 alt={`${app_name} ${currentImageIndex + 1}`} 
-                className="max-h-screen max-w-full object-contain p-4"
+                className="max-h-screen max-w-screen object-contain p-4"
               />
-              <button 
-                className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2"
+              <Button 
+                className="fixed top-4 right-4 text-white bg-black/50 rounded-full p-2"
                 onClick={(e) => {
                   e.stopPropagation();
                   setIsFullscreen(false);
                 }}
+                variant="ghost"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
+                <GoX/>
+              </Button>
             </div>
           )}
 
