@@ -1,5 +1,5 @@
 import { ProjectCardProps } from "@/components/ui/section-card";
-import { FaNodeJs, FaReact } from "react-icons/fa";
+import { FaInstagram, FaNodeJs, FaReact } from "react-icons/fa";
 import { SiAxios, SiExpress, SiGenius, SiGooglegemini, SiNextdotjs, SiOnnx, SiPostgresql, SiPrisma, SiRoboflow, SiShadcnui, SiTailwindcss, SiTypescript, SiVite } from "react-icons/si";
 
 export const STACKS = {
@@ -21,9 +21,35 @@ export const STACKS = {
     PRISMA: { icon: <SiPrisma />, stack: "Prisma", frontend: false },
     ONNX: { icon: <SiOnnx />, stack: "ONNX", frontend: false },
     ROBOFLOW: { icon: <SiRoboflow />, stack: "Roboflow", frontend: false },
+    IG_GRAPH: { icon: <FaInstagram />, stack: "Instagram Graph API", frontend: false },
   }
 
 export const projects: ProjectCardProps[] = [
+    {
+        app_name: "pickAwinner",
+        formality: "client, solo",
+        description: "a simple tool to randomly select winners from Instagram giveaway comments",
+        job: [
+            "everything", 
+        ],
+        thumbnail: "https://raw.githubusercontent.com/rigelgfr/pick-a-winner/refs/heads/main/public/ss/4.webp",
+        image: [
+            "https://raw.githubusercontent.com/rigelgfr/pick-a-winner/refs/heads/main/public/ss/1.webp",
+            "https://raw.githubusercontent.com/rigelgfr/pick-a-winner/refs/heads/main/public/ss/2.webp",
+            "https://raw.githubusercontent.com/rigelgfr/pick-a-winner/refs/heads/main/public/ss/3.webp",
+            "https://raw.githubusercontent.com/rigelgfr/pick-a-winner/refs/heads/main/public/ss/4.webp",
+            "https://raw.githubusercontent.com/rigelgfr/pick-a-winner/refs/heads/main/public/ss/5.webp",
+        ],
+        live: "https://pickawinner.vercel.app/",
+        source_code: "https://github.com/rigelgfr/pick-a-winner",
+        stack: [
+            STACKS.NEXTJS,
+            STACKS.TYPESCRIPT,
+            STACKS.TAILWIND,
+            STACKS.SHADCN,
+            STACKS.IG_GRAPH
+        ]
+    },
     {
         app_name: "Post Generator",
         formality: "client, solo",
