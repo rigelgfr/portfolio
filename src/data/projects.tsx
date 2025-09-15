@@ -17,6 +17,7 @@ import {
   SiN8N,
   SiOllama,
 } from "react-icons/si";
+import { GiBearFace } from "react-icons/gi";
 
 export const STACKS = {
   // Frontend stacks
@@ -26,6 +27,7 @@ export const STACKS = {
   TAILWIND: { icon: <SiTailwindcss />, stack: "Tailwind", frontend: true },
   SHADCN: { icon: <SiShadcnui />, stack: "shadcn/ui", frontend: true },
   VITE: { icon: <SiVite />, stack: "Vite", frontend: true },
+  ZUSTAND: { icon: <GiBearFace />, stack: "Zustand", frontend: true },
 
   // Backend stacks
   NODE: { icon: <FaNodeJs />, stack: "Node.js", frontend: false },
@@ -73,6 +75,29 @@ export const projects: ProjectCardProps[] = [
       STACKS.N8N,
       STACKS.OLLAMA,
       STACKS.MS_OAUTH,
+    ],
+  },
+  {
+    app_name: "EatSight Frontend",
+    formality: "client, solo",
+    description:
+      "the client-facing web application for EatSight, a POS service",
+    job: ["full frontend"],
+    thumbnail: "/ss/eatsight/2.jpg",
+    image: [
+      "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/eatsight/1.jpg",
+      "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/eatsight/2.jpg",
+      "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/eatsight/3.jpg",
+      "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/eatsight/4.jpg",
+      "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/eatsight/5.jpg",
+      "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/eatsight/6.jpg",
+    ],
+    stack: [
+      STACKS.NEXTJS,
+      STACKS.TYPESCRIPT,
+      STACKS.TAILWIND,
+      STACKS.SHADCN,
+      STACKS.ZUSTAND,
     ],
   },
   {
