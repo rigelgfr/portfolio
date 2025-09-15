@@ -87,7 +87,7 @@ export const projects: ProjectCardProps[] = [
     app_name: "VMS AI Modules",
     formality: "client, duo",
     description:
-      "a facial recognition and trend prediction features for a visitor management system",
+      "facial recognition and trend prediction features for a visitor management system",
     job: ["AI"],
     thumbnail:
       "https://github.com/ddmareo/Visitor-Management-System-V2/blob/c780d2984a2e580e4232afd7aff178d31c3721be/public/ss/2.png?raw=true",
