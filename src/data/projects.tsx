@@ -85,7 +85,7 @@ export const projects: ProjectCardProps[] = [
   },
   {
     app_name: "VMS AI Modules",
-    formality: "client, duo",
+    formality: "final project, duo",
     description:
       "facial recognition and trend prediction features for a visitor management system",
     job: ["AI"],
