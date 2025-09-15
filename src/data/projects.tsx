@@ -83,7 +83,8 @@ export const projects: ProjectCardProps[] = [
     description:
       "the client-facing web application for EatSight, a POS service",
     job: ["full frontend"],
-    thumbnail: "/ss/eatsight/2.jpg",
+    thumbnail:
+      "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/eatsight/2.jpg",
     image: [
       "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/eatsight/1.jpg",
       "https://raw.githubusercontent.com/rigelgfr/portfolio/refs/heads/main/public/ss/eatsight/2.jpg",

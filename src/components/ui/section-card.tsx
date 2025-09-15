@@ -5,6 +5,7 @@ import { Badge } from "./badge";
 import { LiveButton, SourceCodeButton } from "./custom-button";
 import { Pokeball } from "./pokeball";
 import { ProjectsDialog } from "./projects-dialog";
+import { AspectRatio } from "./aspect-ratio";
 
 export type SkillCardProps = {
   skill: string;
@@ -140,15 +141,18 @@ export function ProjectCard({
                     </div>
                   )}
 
-                  <img
-                    src={thumbnail}
-                    alt={app_name}
-                    className={`w-full h-full object-contain transition duration-300 group-hover:opacity-70 ${
-                      imageLoaded ? "opacity-100" : "opacity-0"
-                    }`}
-                    onLoad={handleImageLoad}
-                    loading="lazy"
-                  />
+                  <AspectRatio ratio={16 / 9}>
+                    <img
+                      src={thumbnail}
+                      alt={app_name}
+                      className={`w-full h-full object-contain transition duration-300 group-hover:opacity-70 ${
+                        imageLoaded ? "opacity-100" : "opacity-0"
+                      }`}
+                      onLoad={handleImageLoad}
+                      loading="lazy"
+                    />
+                  </AspectRatio>
+
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
                     <span className="text-sm font-semibold">see details</span>
                   </div>
