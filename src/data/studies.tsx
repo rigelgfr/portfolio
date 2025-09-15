@@ -8,9 +8,9 @@ export const studies: ExperienceCardRowProps[] = [
         period: "2022 - Present",
         work: "Informatics Undergraduate",
         points: [
-            "Currently implementing a face recognition and trend prediction module into a visitor management system as my final project",
+            "Implemented a face recognition and trend prediction module into a visitor management system as my final project",
             "Enrolled in AI concentration",
-            "3.75 GPA",
+            "3.83 GPA",
         ]
     },
     {
