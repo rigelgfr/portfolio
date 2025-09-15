@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import { copyToClipboard } from "@/utils/copyEmail";
 import { MdEmail, MdMarkEmailRead } from "react-icons/md";
 
@@ -8,44 +8,46 @@ import { FaFile, FaGithub, FaGlobe } from "react-icons/fa";
 import { toast } from "sonner";
 
 export function EmailButton() {
-    const [copied, setCopied] = useState(false)
-    const email = "rigelrahateen@gmail.com"
+  const [copied, setCopied] = useState(false);
+  const email = "rigelrahateen@gmail.com";
 
-    const handleCopyEmail = async () => {
-        const success = await copyToClipboard({
-          text: email,
-          successMessage: "Email copied!"
-        });
-        
-        if (success) {
-          setCopied(true);
-          setTimeout(() => setCopied(false), 1000);
-        }
-      };
-    return (
-        <span onClick={handleCopyEmail} className="transition cursor-pointer hover:animate-button-tilt ease-in-out duration-500">
-            {copied ? (
-            <MdMarkEmailRead className="size-5 sm:size-6 transition" />
-            ) : (
-            <MdEmail className="size-5 sm:size-6 transition" />
-            )}
-        </span>
-    )
+  const handleCopyEmail = async () => {
+    const success = await copyToClipboard({
+      text: email,
+      successMessage: "Email copied!",
+    });
+
+    if (success) {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1000);
+    }
+  };
+  return (
+    <span
+      onClick={handleCopyEmail}
+      className="transition cursor-pointer hover:animate-button-tilt ease-in-out duration-500">
+      {copied ? (
+        <MdMarkEmailRead className="size-5 sm:size-6 transition" />
+      ) : (
+        <MdEmail className="size-5 sm:size-6 transition" />
+      )}
+    </span>
+  );
 }
 
 export function CVButton() {
   const [isDownloading, setIsDownloading] = useState(false);
-  
+
   const handleDownloadCV = async () => {
     console.log("Starting CV download");
     setIsDownloading(true);
-    
+
     try {
       await downloadCV(
         "https://raw.githubusercontent.com/rigelgfr/portfolio/main/public/file/Rigel_Gregory_CV.pdf",
         "Rigel_Gregory_CV.pdf"
       );
-      
+
       // Show success message
       toast.success("CV downloaded successfully!");
     } catch (error) {
@@ -59,12 +61,11 @@ export function CVButton() {
 
   return (
     <div className="flex self-center items-center gap-2">
-      <Button 
+      <Button
         className="border-1 bg-transparent text-white hover:bg-accent/25"
         variant="default"
         onClick={handleDownloadCV}
-        disabled={isDownloading}
-      >
+        disabled={isDownloading}>
         <FaFile />
         {isDownloading ? "Downloading..." : "CV"}
       </Button>
@@ -73,32 +74,32 @@ export function CVButton() {
   );
 }
 
-export function SourceCodeButton({ source }: { source: string }) {
+export function SourceCodeButton({ source }: { source: string | undefined }) {
   return (
-    <Button
-      size="sm"
-      variant="link"
-      className="select-none px-0"
-    >
-      <a href={source} className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+    <Button size="sm" variant="link" className="select-none px-0">
+      <a
+        href={source}
+        className="flex items-center gap-2"
+        target="_blank"
+        rel="noopener noreferrer">
         <FaGithub />
         <p>source code</p>
       </a>
     </Button>
-  )
+  );
 }
 
 export function LiveButton({ source }: { source: string }) {
   return (
-    <Button
-      size="sm"
-      variant="link"
-      className="select-none px-0"
-    >
-      <a href={source} className="flex items-center gap-2" target="_blank" rel="noopener noreferrer">
+    <Button size="sm" variant="link" className="select-none px-0">
+      <a
+        href={source}
+        className="flex items-center gap-2"
+        target="_blank"
+        rel="noopener noreferrer">
         <FaGlobe />
         <p>LIVE</p>
       </a>
     </Button>
-  )
+  );
 }
