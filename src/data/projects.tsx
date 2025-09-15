@@ -16,8 +16,11 @@ import {
   SiVite,
   SiN8N,
   SiOllama,
+  SiFastapi,
+  SiTensorflow,
 } from "react-icons/si";
 import { GiBearFace } from "react-icons/gi";
+import { LuScanFace } from "react-icons/lu";
 
 export const STACKS = {
   // Frontend stacks
@@ -47,6 +50,9 @@ export const STACKS = {
   N8N: { icon: <SiN8N />, stack: "n8n", frontend: false },
   OLLAMA: { icon: <SiOllama />, stack: "ollama", frontend: false },
   MS_OAUTH: { icon: <FaMicrosoft />, stack: "MS OAuth", frontend: false },
+  FASTAPI: { icon: <SiFastapi />, stack: "FastAPI", frontend: false },
+  FACEAPIJS: { icon: <LuScanFace />, stack: "face-api.js", frontend: false },
+  TF: { icon: <SiTensorflow />, stack: "TensorFlow", frontend: false },
 };
 
 export const projects: ProjectCardProps[] = [
@@ -75,6 +81,34 @@ export const projects: ProjectCardProps[] = [
       STACKS.N8N,
       STACKS.OLLAMA,
       STACKS.MS_OAUTH,
+    ],
+  },
+  {
+    app_name: "VMS AI Modules",
+    formality: "client, duo",
+    description:
+      "a facial recognition and trend prediction features for a visitor management system",
+    job: ["AI"],
+    thumbnail:
+      "https://github.com/ddmareo/Visitor-Management-System-V2/blob/c780d2984a2e580e4232afd7aff178d31c3721be/public/ss/2.png?raw=true",
+    image: [
+      "https://github.com/ddmareo/Visitor-Management-System-V2/blob/c780d2984a2e580e4232afd7aff178d31c3721be/public/ss/1.png?raw=true",
+      "https://github.com/ddmareo/Visitor-Management-System-V2/blob/c780d2984a2e580e4232afd7aff178d31c3721be/public/ss/2.png?raw=true",
+      "https://github.com/ddmareo/Visitor-Management-System-V2/blob/c780d2984a2e580e4232afd7aff178d31c3721be/public/ss/3.png?raw=true",
+      "https://github.com/ddmareo/Visitor-Management-System-V2/blob/c780d2984a2e580e4232afd7aff178d31c3721be/public/ss/4.png?raw=true",
+      "https://github.com/ddmareo/Visitor-Management-System-V2/blob/c780d2984a2e580e4232afd7aff178d31c3721be/public/ss/5.png?raw=true",
+      "https://github.com/ddmareo/Visitor-Management-System-V2/blob/c780d2984a2e580e4232afd7aff178d31c3721be/public/ss/6.png?raw=true",
+      "https://github.com/ddmareo/Visitor-Management-System-V2/blob/c780d2984a2e580e4232afd7aff178d31c3721be/public/ss/7.png?raw=true",
+    ],
+    source_code: "https://github.com/ddmareo/Visitor-Management-System-V2",
+    stack: [
+      STACKS.NEXTJS,
+      STACKS.TYPESCRIPT,
+      STACKS.TAILWIND,
+      STACKS.POSTGRESQL,
+      STACKS.FACEAPIJS,
+      STACKS.TF,
+      STACKS.FASTAPI,
     ],
   },
   {
