@@ -137,7 +137,7 @@ export const projects: ProjectCardProps[] = [
   },
   {
     app_name: "pickAwinner",
-    formality: "client, solo",
+    formality: "personal, solo",
     description:
       "a simple tool to randomly select winners from Instagram giveaway comments",
     job: ["everything"],
@@ -162,7 +162,7 @@ export const projects: ProjectCardProps[] = [
   },
   {
     app_name: "Post Generator",
-    formality: "client, solo",
+    formality: "personal, solo",
     description:
       "an IG post generator for @akunimpact, utilizing a custom trained YOLOv8 object detection model",
     job: ["everything"],
