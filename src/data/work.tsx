@@ -9,6 +9,8 @@ export const work: ExperienceCardRowProps[] = [
     period: "July 2025 - Present",
     work: "Manufacturing Technology Intern",
     points: [
+      "Developing an information system application for the R&D department",
+      "Created a system minimum application for future EMI apps, utilizing ALVA's CMMS API and authentication, Next.js, and PostgreSQL",
       "Developed a local RAG chatbot application with n8n, ollama, and Next.js",
     ],
   },
