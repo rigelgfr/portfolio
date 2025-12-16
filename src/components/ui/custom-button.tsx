@@ -25,7 +25,8 @@ export function EmailButton() {
   return (
     <span
       onClick={handleCopyEmail}
-      className="transition cursor-pointer hover:animate-button-tilt ease-in-out duration-500">
+      className="transition cursor-pointer hover:animate-button-tilt ease-in-out duration-500"
+    >
       {copied ? (
         <MdMarkEmailRead className="size-5 sm:size-6 transition" />
       ) : (
@@ -44,7 +45,7 @@ export function CVButton() {
 
     try {
       await downloadCV(
-        "https://raw.githubusercontent.com/rigelgfr/portfolio/main/public/file/Rigel_Gregory_CV.pdf",
+        "https://drive.google.com/uc?export=download&id=1YFCbkDflgtmrum1hjvXZplsJ-1hDS4z7",
         "Rigel_Gregory_CV.pdf"
       );
 
@@ -65,7 +66,8 @@ export function CVButton() {
         className="border-1 bg-transparent text-white hover:bg-accent/25"
         variant="default"
         onClick={handleDownloadCV}
-        disabled={isDownloading}>
+        disabled={isDownloading}
+      >
         <FaFile />
         {isDownloading ? "Downloading..." : "CV"}
       </Button>
@@ -81,7 +83,8 @@ export function SourceCodeButton({ source }: { source: string | undefined }) {
         href={source}
         className="flex items-center gap-2"
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+      >
         <FaGithub />
         <p>source code</p>
       </a>
@@ -96,7 +99,8 @@ export function LiveButton({ source }: { source: string }) {
         href={source}
         className="flex items-center gap-2"
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+      >
         <FaGlobe />
         <p>LIVE</p>
       </a>
