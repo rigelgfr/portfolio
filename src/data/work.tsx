@@ -6,12 +6,13 @@ export const work: ExperienceCardRowProps[] = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5M-01OiREiLaoaTzKsVFsBS9yNz8V3sMwYg&s",
     institute: "ALVA",
     link: "https://id.linkedin.com/company/pt-ilectra-motor-group",
-    period: "July 2025 - Present",
+    period: "July 2025 - December 2025",
     work: "Manufacturing Technology Intern",
     points: [
-      "Developing an information system application for the R&D department",
+      "Designed and developed a digital twin dashboard of the production line",
+      "Designed and developed an internal request & approval system to manage test requests and tool borrowing with multi-level approvals",
       "Created a system minimum application for future EMI apps, utilizing ALVA's CMMS API and authentication, Next.js, and PostgreSQL",
-      "Developed a local RAG chatbot application with n8n, ollama, and Next.js",
+      "Developed an internal RAG chatbot with a knowledgebase management system",
     ],
   },
   {
