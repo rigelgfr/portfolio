@@ -6,7 +6,7 @@ export const studies: ExperienceCardRowProps[] = [
       "https://upload.wikimedia.org/wikipedia/en/a/ae/President_University_Logo.png",
     institute: "President University",
     link: "https://president.ac.id/",
-    period: "2022 - Present",
+    period: "2022 - 2025",
     work: "Bachelor of Computer Science",
     points: [
       "Designed and implemented AI-powered modules for a Visitor Management System as part of a collaborative final project.",
